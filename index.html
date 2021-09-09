@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" type = "text/css" href = "./index.css">
+        <link rel="stylesheet" type="text/css" href="./footer.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+            $("#header").load("./header.html");
+            $("#footer").load("./footer.html");
+            });
+            
+        </script>
+    </head>
+    <body>
+        <script>
+            $(document).ready(function(){
+                $('#island-select').on('change', function(){
+                    var islvalue = $(this).val();
+                    window.currentIsl = islvalue; 
+                    $("div.myDiv").hide();
+                    $("#show"+islvalue).show();
+                            
+                    console.log($("#form-no-data"))
+                    $("#form-no-data").trigger('click');
+                });
+            });
+
+            /*Radio buttons to display different raster data on island*/
+            $(document).ready(function(){
+              $("input[name$='bn']").click(function(){
+              var radio_value = $(this).val();
+              var isl_value = $('#island-select option:selected')[0].value;
+              console.log(isl_value)
+                if(radio_value=='0') {
+                $("#nodata"+isl_value).show();
+                $("#rainfall"+isl_value).hide();
+                $("#evapotranspiration"+isl_value).hide();
+              }
+              else if(radio_value=='1') {
+                $("#nodata"+isl_value).hide();
+                $("#rainfall"+isl_value).show();
+                $("#evapotranspiration"+isl_value).hide();
+              }
+              else if(radio_value=='2') {
+                $("#nodata"+isl_value).hide();
+                $("#rainfall"+isl_value).hide();
+                $("#evapotranspiration"+isl_value).show();
+               }
+              });
+              $('[name="bn"]:checked').trigger('click');
+            });
+        </script>
+
+        <div id="header">Header</div>
+
+        <div class="content">
+            <div class="image">
+                <img src = "ParkerRanch.jpeg">
+            </div>
+            
+            <div class="statewide">
+                <p id="subcategory">Statewide Conditions</p>
+                <div class="wrapper" >
+                    <div class="left-content">
+                          
+                      <div class="gauge">
+                        <img src="./gauge.png">
+                      </div>
+  
+                    <div class="windy">
+                        <iframe width="450" height="250" src="https://embed.windy.com/embed2.html?lat=20.689&lon=-157.843&detailLat=20.589&detailLon=-159.173&width=450&height=250&zoom=6&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=12&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+                    </div>
+                    </div>
+                    <div class="drought">
+                        <img style="width: 400px; height: auto;" src="http://droughtmonitor.unl.edu/data/jpg/current/current_hi_trd.jpg">
+                        <p style="margin:0; padding:0;">Source: National Drought Mitigation Center (NDMC)</p>
+                    </div>
+                        
+                  </div>
+                
+            </div>
+            
+            <div class="sitespecific">
+                <p id="subcategory">Site-specific Conditions</p>
+
+                <p style="text-align: center;">Select an island from the dropdown below.</p>
+                <select id="island-select">
+
+                    <option value="Sel">Select an island</option>
+                    <option value="HI">Hawai‘i Island</option>
+                    <option value="Maui">Maui</option>
+                    <option value="Lanai">Lanai</option>
+                    <option value="Molokai">Moloka‘i</option>
+                    <option value="Oahu">O‘ahu</option>                        
+                    <option value="Kauai">Kauai</option>
+
+                </select>
+                
+                <div id="showSel" class="myDiv">
+                    <p></p>
+                    <img id="islands" src="./islands/islands.png">
+                </div>
+
+                
+
+                <div id="showHI" class="myDiv">
+                    <p> Click on an area of interest to view site-specific data.</p>
+                    <p style="display: inline;"> Map view:</p>
+                    <form style="display: inline;">
+                      <input type="radio" name="bn" value="0"  checked="checked" id="form-no-data"/> No Data
+                      <input type="radio" name="bn" value="1" id="form-rain-fall"/> Rainfall
+                      <input type="radio" name="bn" value="2" id="form-evapo"/> Evapotranspiration
+                    </form>
+                      <div id="nodataHI">
+                        <img id="a" src="./islands/no_data_hi.png" usemap="#HI">
+
+                        <map name="HI">
+                            <area shape="rect" coords="209,22,220,31" alt="a" href="./imagemap.html">
+                            <area shape="rect" coords="184,161,196,172" alt="Palani" href="#">
+                        </map>
+                      </div>
+
+                      <div id="rainfallHI" style="padding-top: 150px; padding-bottom: 200px;">Coming Soon</div>
+
+                      <div id="evapotranspirationHI" style="width: 40%; margin: auto;">
+                        <img id="a" src="./islands/ET_Hi.png" usemap="#ET">
+
+                        <map name="ET">
+                            <area shape="rect" coords="209,22,220,31" alt="a" href="./imagemap.html">
+                            <area shape="rect" coords="184,161,196,172" alt="Palani" href="#">
+                        </map>
+                        <p class="date" >June, 2021 <a href="https://earthengine.google.com/">Google Earth Engine</a></p>
+                      </div>
+                </div>
+
+                <div id="showMaui" class="myDiv">
+                    <form>
+                        <input type="radio" name="bn" value="0"  checked="checked" /> No Data
+                        <input type="radio" name="bn" value="1" /> Rainfall
+                        <input type="radio" name="bn" value="2"/> Evapotranspiration
+                    </form>
+                      <div id="nodataMaui">
+                        <img id="a" src="./islands/no_data_hi.png" usemap="#HI">
+
+                        <map name="HI">
+                            <area shape="rect" coords="257,34,275,51" alt="a" href="./imagemap.html">
+                            <area shape="rect" coords="222,243,240,263" alt="Palani" href="#">
+                        </map>
+                      </div>
+
+                      <div id="rainfallMaui" style="padding-top: 150px; padding-bottom: 200px;">Coming Soon</div>
+
+                      <div id="evapotranspirationMaui">
+                        <img id="a" src="./islands/ET_Hi.png" usemap="#ET">
+
+                        <map name="ET">
+                            <area shape="rect" coords="257,34,275,51" alt="a" href="./imagemap.html">
+                            <area shape="rect" coords="222,243,240,263" alt="Palani" href="#">
+                        </map>
+                      </div>
+                    
+                </div>
+
+                <div id="showLanai" class="myDiv">
+                    <form>
+                        <input type="radio" name="bn" value="0"  checked="checked" /> No Data
+                        <input type="radio" name="bn" value="1" /> Rainfall
+                        <input type="radio" name="bn" value="2"/> Evapotranspiration
+                    </form>
+                      <div id="nodataLanai">
+                        <img id="a" src="./islands/no_data_hi.png" usemap="#HI">
+
+                        <map name="HI">
+                            <area shape="rect" coords="257,34,275,51" alt="a" href="./imagemap.html">
+                            <area shape="rect" coords="222,243,240,263" alt="Palani" href="#">
+                        </map>
+                      </div>
+
+                      <div id="rainfallLanai" style="padding-top: 200px; padding-bottom: 200px;">Coming Soon</div>
+
+                      <div id="evapotranspirationLanai">
+                        <img id="a" src="./islands/ET_Hi.png" usemap="#ET">
+
+                        <map name="ET">
+                            <area shape="rect" coords="257,34,275,51" alt="a" href="./imagemap.html">
+                            <area shape="rect" coords="222,243,240,263" alt="Palani" href="#">
+                        </map>
+                      </div>
+                    
+                </div>
+
+                <div id="showMolokai" class="myDiv">
+                    <img src="./islands/molokai.png" alt="Moloka‘i"/>
+                </div>
+                <div id="showOahu" class="myDiv">
+                    <img src="./islands/oahu.png" alt="O‘ahu"/>
+                </div>
+                <div id="showKauai" class="myDiv">
+                    <img src="./islands/kauai.png" alt="Kauai"/>
+                </div>
+
+            </div>
+            
+
+        </div>
+
+        <div id="footer">Footer</div>
+
+
+    </body>
+</html>

@@ -1,0 +1,93 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+  
+.content {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.image img{
+    width: 100%;
+}
+
+.wrapper{
+    margin: 0 auto;
+    width: 75%;
+    height: auto;
+    text-align: center;
+}
+
+.left-content{
+    overflow: hidden;
+    float: left;
+    margin-left: 100px;
+    width: 450px;
+}
+
+.gauge{
+    text-align: center;
+}
+
+.gauge img{
+    width: 60%;
+    height: auto;
+}
+
+.drought {
+    overflow: hidden;
+    padding-top:70px ;
+    padding-left: 0;
+    margin:0;
+
+}
+
+#subcategory{
+    text-align: center;
+    font-weight: bold;
+}
+
+.statewide-info{
+    justify-content: center;
+}
+
+.sitespecific{
+    text-align: center;
+}
+
+#island-select{
+    width: 300px;
+    font-size: 16px;
+}
+
+#showSel{
+    display: inline;
+}
+
+/*#showSel p{
+    margin-top: 400px;
+}*/
+
+#showSel img{
+    width: 50%;
+    height: auto;
+}
+
+.myDiv{
+    display:none;
+    text-align:center;
+    padding-top: 10px;
+}  
+
+#showHI #myImage{
+    border: none;
+    height: auto;
+    max-width: 100%;
+    width: auto;
+}
+
+.date{
+    text-align: right;
+}
