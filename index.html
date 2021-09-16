@@ -5,6 +5,13 @@
         <link rel = "stylesheet" type = "text/css" href = "./index.css">
         <link rel="stylesheet" type="text/css" href="./footer.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-circular-gauge.min.js"></script>
+        <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+        <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+        <script src="gauge.js"></script>
         <script>
             $(function(){
             $("#header").load("./header.html");
@@ -54,31 +61,27 @@
         </script>
 
         <div id="header">Header</div>
+        
+        
+        <a href="./tool.php">Decision support tool</a>
 
-        <div class="content">
             <!--<div class="image">
                 <img src = "ParkerRanch.jpeg">
             </div>-->
-            
+            <p id="subcategory">Statewide Conditions</p>
+            <div id="gauge"  ></div>
+      <div class="content">
             <div class="statewide">
-                <p id="subcategory">Statewide Conditions</p>
-                <div class="wrapper" >
-                    <div class="left-content">
-                          
-                      <div class="gauge">
-                        <img src="./gauge.png">
-                      </div>
-  
-                    <div class="windy">
+                    <div class="windy" style="display: inline;">
                         <iframe width="450" height="250" src="https://embed.windy.com/embed2.html?lat=20.689&lon=-157.843&detailLat=20.589&detailLon=-159.173&width=450&height=250&zoom=6&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=12&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
                     </div>
-                    </div>
-                    <div class="drought">
+
+                    <div class="drought" style="display: inline;">
                         <img style="width: 400px; height: auto;" src="http://droughtmonitor.unl.edu/data/jpg/current/current_hi_trd.jpg">
                         <p style="margin:0; padding:0;">Source: National Drought Mitigation Center (NDMC)</p>
                     </div>
                         
-                  </div>
+
                 
             </div>
             
@@ -91,6 +94,7 @@
                     <option value="Sel">Select an island</option>
                     <option value="HI">Hawai‘i Island</option>
                     <option value="Maui">Maui</option>
+                    <option value="Kahoolawe">Kaho‘olawe</option>
                     <option value="Lanai">Lanai</option>
                     <option value="Molokai">Moloka‘i</option>
                     <option value="Oahu">O‘ahu</option>                        
@@ -162,6 +166,34 @@
                       </div>
                     
                 </div>
+
+                <div id="showKahoolawe" class="myDiv">
+                  <form>
+                      <input type="radio" name="bn" value="0"  checked="checked" /> No Data
+                      <input type="radio" name="bn" value="1" /> Rainfall
+                      <input type="radio" name="bn" value="2"/> Evapotranspiration
+                  </form>
+                    <div id="nodataKahoolawe">
+                      <img id="a" style="width:20%; height:auto" src="./islands/kahoolawe.png" usemap="#HI">
+
+                      <map name="HI">
+                          <area shape="rect" coords="257,34,275,51" alt="a" href="./imagemap.html">
+                          <area shape="rect" coords="222,243,240,263" alt="Palani" href="#">
+                      </map>
+                    </div>
+
+                    <div id="rainfallKahoolawe" style="padding-top: 150px; padding-bottom: 200px;">Coming Soon</div>
+
+                    <div id="evapotranspirationKahoolawe">
+                      <img id="a" src="./islands/ET_Hi.png" usemap="#ET">
+
+                      <map name="ET">
+                          <area shape="rect" coords="257,34,275,51" alt="a" href="./imagemap.html">
+                          <area shape="rect" coords="222,243,240,263" alt="Palani" href="#">
+                      </map>
+                    </div>
+                  
+              </div>
 
                 <div id="showLanai" class="myDiv">
                     <form>

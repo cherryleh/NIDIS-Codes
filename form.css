@@ -1,0 +1,170 @@
+html, body {
+    min-height: 100%;
+}
+
+/*div, form, input, select { 
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+    line-height: 22px;
+}
+
+h4 {
+    margin: 20px 0 4px;
+    font-weight: 400;
+    display: inline-block;
+}
+
+
+
+.testbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding: 3px;
+
+}
+    
+form {
+    width: 50%;
+    padding: 20px;
+    background: #fff;
+    box-sizing: border-box;
+    border: 1px solid black;
+    /*    box-shadow: 0 2px 5px #ccc; 
+}
+
+input {
+    width:50%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+
+input:hover, textarea:hover, select:hover {
+    outline: none;
+    border: 1px solid #095484;
+    background: #e6eef7;
+}
+
+#grass select{
+    width: 50%;
+}
+
+/*.title-block input {
+    margin-bottom: 500px;
+}
+
+
+/*select {
+    padding: 7px 0;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background: transparent;
+}
+
+.testbox select, table {
+    width: 100%;
+}
+
+.testbox option {
+    background: #fff;
+}
+
+    
+.testbox button {
+    width: auto;
+    padding: 10px;
+    border: none;
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    background-color: #095484;
+    font-size: 16px;
+    cursor: pointer;
+}
+    
+.testbox button:hover {
+    background-color: #0666a3;
+}
+
+.testbox .btn-block {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    }
+    
+@media (min-width: 568px) {
+    .title-block {
+    display: flex;
+    justify-content: space-between;
+    }
+    .title-block select {
+    width: 30%;
+    margin-bottom: 0;
+    }
+    .title-block input {
+    width: 31%;
+    margin-bottom: 0;
+    }
+    th, td {
+    word-break: keep-all;
+    }
+    }*/
+
+#input{
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+tr {
+    height: 50px;
+ }
+
+.col-xs-6{
+    text-align: left;
+    padding-left: 60px;
+    font-size: 20px;
+}
+
+#submitFormData {
+    width:30%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#submit{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+input:hover, textarea:hover, select:hover {
+    outline: none;
+    background: #e6eef7;
+    
+}
+
+input[type="text"] {
+    width: 90%;
+    display: block;
+    height: 30px;
+  }
+
+#grasstype{
+    display: block;
+    width: 90%;
+    height: 30px;
+}
