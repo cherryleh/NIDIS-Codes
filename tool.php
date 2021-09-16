@@ -13,7 +13,6 @@
 
         <script> 
         $(function(){
-          $("#output").load("python.html");
           $("#header").load("header.html"); 
           $("#footer").load("footer.html");
         });
