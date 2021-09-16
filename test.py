@@ -108,6 +108,11 @@ me_gd = int((me_sp*0.5)/(au*dmau))
 mn_gd = int((mn_sp*0.5)/(au*dmau))
 
 heading = """<html>
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+</head>
 <body>
     <div id="output">
     <table id=“multiLevelTable”>
@@ -234,7 +239,7 @@ new_gd = gd.format(me_gd=me_gd,
    mn_gd_fnt=mn_gd_fnt, 
    mn_gd_res=mn_gd_res)
 
-file = open("../../Codes/testing/python.html","w")
+file = open("./python.html","w")
 file.write(new_heading)
 file.write(new_qfp)
 file.write(new_pr)
