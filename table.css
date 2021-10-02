@@ -2,6 +2,8 @@
 table,th{
     border-collapse: collapse;
     border: 1px solid black;
+    color: black;
+    font-size: 16px;
     
 }
 th{
@@ -11,13 +13,14 @@ th{
     padding-bottom: 5px;
 }
 table{
-    width: 70%;
+    width: 50%;
+    height: 400px;
     margin-left: auto;
     margin-right: auto;
 }
 .left{
     text-align: left;
-    padding-left: 80px;
+    padding-left: 150px;
     width: 40%;
 }
 

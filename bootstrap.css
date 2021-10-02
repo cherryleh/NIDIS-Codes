@@ -1,0 +1,97 @@
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 100px;
+    /* bottom = footer height */
+    padding: 25px;
+}
+
+*{
+    color: black;
+    font-size: 16px;
+}
+
+#radio{
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.name{
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.accordion{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.myDiv{
+    display: none;
+}
+
+.wrap{
+    float:left;
+    width:48%;
+}
+.div1 {
+    height:50%;
+    width:70%;
+    text-align: right;   
+    margin-left: auto; 
+    margin-right: 0;
+
+}
+
+.div1 img{
+    width: 60%;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+
+}
+
+
+
+.div1 p{
+    width: 60%;
+    height: 20%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    margin-left: 0;
+    margin-right: auto;
+    background-color: #fef2c8;
+}
+
+.div3 {
+    height:50%;
+    width:80%;
+    display: inline-block;
+    margin-left: 0;
+    margin-right: auto;
+
+}
+
+.div3 img{
+    width: 120%;
+    display: block;
+    margin-left: -20%;
+}
+
+.history{
+    width: 100%;
+    height: 50%;
+    margin-top: -20%;
+    clear: left;
+
+}
+
+.error{
+    color: red;
+}

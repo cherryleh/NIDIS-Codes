@@ -6,6 +6,8 @@ import sys
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from calendar import monthrange 
+import logging
+
 
 print(sys.argv[:])
 
@@ -215,6 +217,7 @@ gd = """<td id="datatitle" colspan="3"> Grazing Days</td>
         </tr>
     </table>
     </div>
+    
 </body>
 </html>"""
 
@@ -247,3 +250,4 @@ file.write(new_gd)
 file.close()
 
 print(me_gd)
+logging.info('hello')

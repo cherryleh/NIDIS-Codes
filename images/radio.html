@@ -1,0 +1,61 @@
+<html>
+    <head>
+        
+    </head>    
+    
+    <body onLoad="preLoad()">
+
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script>
+        $(document).ready(function(){
+          $("input[name$='bn']").click(function(){
+          var radio_value = $(this).val();
+          if(radio_value=='0') {
+            $("#nodata").show();
+            $("#rainfall").hide();
+            $("#evapotranspiration").hide();
+          }
+          else if(radio_value=='1') {
+            $("#nodata").hide();
+            $("#rainfall").show();
+            $("#evapotranspiration").hide();
+          }
+          else if(radio_value=='2') {
+            $("#nodata").hide();
+            $("#rainfall").hide();
+            $("#evapotranspiration").show();
+           }
+          });
+          $('[name="bn"]:checked').trigger('click');
+        });
+
+      </script>
+        
+        
+
+      <input type="radio" name="bn" value="0"  checked="checked" /> No Data
+      <input type="radio" name="bn" value="1" /> Rainfall
+      <input type="radio" name="bn" value="2"/> Evapotranspiration
+
+      <div id="nodata">
+        <img id="a" src="no_data_hi.png" usemap="#HI">
+
+        <map name="HI">
+            <area shape="rect" coords="257,34,275,51" alt="a" href="./imagemap.html">
+            <area shape="rect" coords="222,243,240,263" alt="Palani" href="#">
+        </map>
+      </div>
+
+      <div id="rainfall">Coming Soon</div>
+
+      <div id="evapotranspiration">
+        <img id="a" src="ET_Hi.png" usemap="#ET">
+
+        <map name="ET">
+            <area shape="rect" coords="257,34,275,51" alt="a" href="./imagemap.html">
+            <area shape="rect" coords="222,243,240,263" alt="Palani" href="#">
+        </map>
+      </div>
+
+    </body>
+</html>

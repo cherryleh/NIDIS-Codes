@@ -110,7 +110,7 @@ anychart.onDocumentReady(function () {
     .fontColor('#212121')
     .fontSize(14)
     .offsetY('135%')
-    .offsetX(20)
+    .offsetX('10%')
     .anchor('center');
             
 
@@ -120,7 +120,7 @@ anychart.onDocumentReady(function () {
     .fontColor('#212121')
     .fontSize(14)
     .offsetY('120%')
-    .offsetX(90)
+    .offsetX('50%')
     .anchor('center');
     
 
@@ -130,9 +130,12 @@ anychart.onDocumentReady(function () {
     .fontColor('#212121')
     .fontSize(14)
     .offsetY('-135%')
-    .offsetX(-20)
+    .offsetX('-10%')
     .anchor('center');
     
   gauge.container('gauge');
   gauge.draw();
 });
+
+
+
