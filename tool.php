@@ -144,7 +144,7 @@ $GD_Mn = round(($SP_Mn*0.5)/($animalunits*$drymatter),2);
 echo '<div id="output" >
 <table id=“multiLevelTable”>
     <tr id="month">
-        <th  colspan="3">  Historical characteristics under' . $cond .'Conditions</td>
+        <th  colspan="3">  Historical characteristics under ' . $cond .' Conditions</td>
     </tr>
     <tr>
         <td id="datatitle" colspan="3"> Quarterly Forage Production</td>

@@ -3,7 +3,7 @@
   <head>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-      <link rel = "stylesheet" type = "text/css" href = "bootstrap.css">
+      <link rel = "stylesheet" type = "text/css" href = "ranchpage.css">
       <link rel = "stylesheet" type = "text/css" href = "form.css">
       <link rel = "stylesheet" type = "text/css" href = "table.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
@@ -148,7 +148,7 @@
       });
     </script>
 
-    <h5 style="text-align: center; padding-top: 5px"> RS01 </h5>
+    <h5 id = "ranchsquare"> RS01 </h5>
     <div class="accordion" id="accordionPanelsStayOpenExample">
       <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingOne">
@@ -218,13 +218,12 @@
                     </select> 
                     <br><br>  
                     Dry matter per animal units:    <input id="drymatter" placeholder="26" class="question" type="text" name="drymatter" value="<?php echo $drymatter;?>">
-                    <span class="error">* <?php echo $emailErr;?></span>
                     <br><br>
                     Number of animal units: <input id="animalunits" class="question" type="text" name="animalunits" value="<?php echo $animalunits;?>">
-                    <span class="error">* <?php echo $websiteErr;?></span>
+                    <span class="error">* </span>
                     <br><br>
                     Number of acres grazed: <input id="acres"class="question" type="text" name="acres" value="<?php echo $acres;?>">
-                    <span class="error">* <?php echo $genderErr;?></span>
+                    <span class="error">* </span>
                     <br><br>
 
                     <input type="button" id="submit" onclick=" showDiv(); SubmitFormData();" value="Submit" />
