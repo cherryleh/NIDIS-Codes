@@ -17,13 +17,13 @@ body {
 
 #radio{
     text-align: center;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding-bottom: 1%;
+    padding-top: 1%;
 }
 
 #ranchsquare{
     text-align: center; 
-    padding-top: 20px;
+    padding-top: 1%;
     padding-bottom: 10px;
 }
 
@@ -47,7 +47,7 @@ body {
     width:48%;
 }
 .div1 {
-    height:50%;
+    height:40%;
     width:70%;
     text-align: right;   
     margin-left: auto; 
@@ -76,7 +76,7 @@ body {
 }
 
 .div3 {
-    height:50%;
+    height:40%;
     width:80%;
     display: inline-block;
     margin-left: 0;

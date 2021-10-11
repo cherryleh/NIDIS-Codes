@@ -157,7 +157,7 @@
           </button>
         </h2>
         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body" style="height: 100%">
+            <div class="accordion-body" style="height: 120%; width: 100%">
                 <div id="radio">
                     <form style="display: inline; border: none; box-shadow: none">
                         <input type="radio" name="bn" value="0" /> Rainfall
@@ -188,11 +188,30 @@
                         </div>
                     </div>
                     <div class="history">
-                      <div id="plot" style=" width: 1200px; height: 60%; margin-left:auto; margin-right: auto">
+                      <div id="plot">
                       </div>
                     </div>
                 </div>
-
+                <div id="NDVI" class="myDiv">
+                  <p class="name">NDVI</p>    
+                <div class="wrap">
+                    <div class="div1">
+                        <img src="./images/area1.png">
+                        <p> NDVI is... the map above... the chart... Source: Earth Engine</p>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="div3">
+                        <div class="graph">
+                            <img src="./graphs/Palani Ranch_ndvi.png">
+                        </div> 
+                    </div>
+                </div>
+                <div class="history">
+                  <div id="plot">
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
       </div>
