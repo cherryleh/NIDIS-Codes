@@ -6,16 +6,19 @@
       <link rel = "stylesheet" type = "text/css" href = "ranchpage.css">
       <link rel = "stylesheet" type = "text/css" href = "form.css">
       <link rel = "stylesheet" type = "text/css" href = "table.css">
+      
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
       <script src=“Contents/jquery-1.9.1.js”></script>    
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
       <script src="http://code.jquery.com/jquery-latest.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+      <link rel = "stylesheet" type = "text/css" href = "header.css">
 
       <script> 
           $(function(){
-              $("#header").load("header.html"); 
-              $("#footer").load("footer.html"); 
+              $("#header").load("./header.html"); 
+              $("#footer").load("./footer.html"); 
             });
 
       </script>
@@ -23,12 +26,12 @@
     </head>
 
   <body>
-    <div id="header" >Header</div>
+    <div id="header">Header</div>
     <script>
-      const CSV = "et_df.csv"
+      const etCSV = "et_df.csv"
 
       function plotFromCSV() {
-          Plotly.d3.csv(CSV, function(err, rows) {
+          Plotly.d3.csv(etCSV, function(err, rows) {
               console.log(rows);
               processData(rows);
           });
@@ -101,7 +104,7 @@
               },
           };
           let config = { 
-              responsive: true,
+              /*responsive: true,*/
               displayModeBar: true,
           };
 
@@ -113,6 +116,95 @@
 
 
     </script>
+    <!--<script>
+        const CSV = "ndvi_df.csv"
+  
+        function plotFromCSV() {
+            Plotly.d3.csv(CSV, function(err, rows) {
+                console.log(rows);
+                processData(rows);
+            });
+        }
+  
+        function processData(allRows) {
+            let x = [];
+            let y1 = [];
+            let row;
+            let i = 0;
+            while (i < allRows.length) {
+                row = allRows[i];
+                x.push(row["datetime"]);
+                y1.push(row["NDVI"]);
+                i += 1;
+            }
+            
+            console.log("X", x);
+            console.log("Y1", y1);
+            makePlotly(x, y1,);
+        }
+  
+        var selectorOptions = {
+            buttons: [{
+                step: 'month',
+                stepmode: 'backward',
+                count: 1,
+                label: '1m'
+            }, {
+                step: 'month',
+                stepmode: 'backward',
+                count: 6,
+                label: '6m'
+            }, {
+                step: 'year',
+                stepmode: 'todate',
+                count: 1,
+                label: 'YTD'
+            }, {
+                step: 'year',
+                stepmode: 'backward',
+                count: 1,
+                label: '1y'
+            }, {
+                step: 'all',
+            }],
+        };
+  
+        function makePlotly(x, y1) {
+            let traces = [
+                {
+                    x: x,
+                    y: y1,
+                    name: "NDVI",
+                    hovertemplate: 'NDVI: %{y}<extra></extra>',
+                    line: {
+                        color: "#387fba",
+                        width: 3
+                    }
+                        
+                }
+            ];
+            let layout = {
+                yaxis: {
+                    range: [0.2, 0.8]
+                },
+                xaxis: {
+                    rangeselector: selectorOptions,
+                    rangeslider: {}
+                },
+            };
+            let config = { 
+                responsive: true,
+                displayModeBar: true,
+            };
+  
+                
+  
+            Plotly.newPlot("ndvi", traces, layout, config);
+        }
+        plotFromCSV();
+  
+  
+    </script>-->
     <script>
       $(document).ready(function(){
         $("input[name$='bn']").click(function(){
@@ -167,17 +259,17 @@
                     </form>
                 </div>
                 <div id="rainfall" class="myDiv">
-                    <p class="name">Rainfall</p>    
+                    <div class="name"> <p class="name">Rainfall</p></div>    
                 </div>
                 <div id="temp" class="myDiv">
-                    <p class="name">Temperature</p>
+                    <div class="name"> <p class="name">Temperature</p></div>
                 </div>
                 <div id="ET" class="myDiv">
-                    <p class="name">Evapotranspiration</p>
+                    <div class="name"> <p>Evapotranspiration</p> </div>
                     <div class="wrap">
                         <div class="div1">
-                            <img src="./images/area1.png">
-                            <p> Evapotranspiration is... the map above... the chart... Source: Earth Engine</p>
+                            <img src="./islands/HI/RS4_et.png">
+                            <p> Evapotranspiration is the combination of processes that takes water from the surface and transforms it into water vapor in the air Source: Earth Engine</p>
                         </div>
                     </div>
                     <div class="wrap">
@@ -188,15 +280,14 @@
                         </div>
                     </div>
                     <div class="history">
-                      <div id="plot">
-                      </div>
+                      <img src="./graphs/RS1_et_history.png">
                     </div>
                 </div>
                 <div id="NDVI" class="myDiv">
-                  <p class="name">NDVI</p>    
+                  <div class="name"><p class="name">NDVI</p> </div>   
                 <div class="wrap">
                     <div class="div1">
-                        <img src="./images/area1.png">
+                        <img src="./islands/HI/RS4_et.png">
                         <p> NDVI is... the map above... the chart... Source: Earth Engine</p>
                     </div>
                 </div>
@@ -208,7 +299,7 @@
                     </div>
                 </div>
                 <div class="history">
-                  <div id="plot">
+                  <div id="ndvi">
                   </div>
                 </div>
               </div>
@@ -297,9 +388,25 @@
           </button>
         </h2>
         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-          <div class="accordion-body">
-            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-          </div>
+          <div class="accordion-body" id="section 3">
+            <div id="rainProj" class="sec3heading">
+              <h5> 3-Month Rainfall Projections </h5>
+              <img src="./graphs/RS1_rainfall.png">
+            </div>
+            <div id="rainHist" class="sec3heading">
+              <h5> Average Rainfall and Temperature </h5>
+              <img src=" ./RS01_BI/RS01_BI_Climograph.png">
+            </div>
+            <div id="rainTrend" class="sec3heading">
+              <h5> 100-year Rainfall Trends</h5>
+              <img src="./RS01_BI/RS01_BI_RF_Trend.png">
+            </div>
+            <div id="droughtHist" class="sec3heading">
+              <h5> 100-year Drought History</h5>
+              <img src="./RS01_BI/RS01_BIDrought_History.png">
+            </div>
+            
+          </div> 
         </div>
       </div>
     </div>

@@ -2,11 +2,11 @@ html, body {
     min-height: 100%;
 }
 
-div, form, input, select { 
+form, input, select { 
     padding: 0;
     margin: 0;
     outline: none;
-    font-family: Roboto, Arial, sans-serif;
+    /*font-family: Roboto, Arial, sans-serif;*/
     font-size: 14px;
     color: #666;
     line-height: 22px;

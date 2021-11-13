@@ -4,7 +4,7 @@
     </head>
     <body>
         <script>
-            const CSV = "et_df.csv"
+            const CSV = "ndvi_df.csv"
   
             function plotFromCSV() {
                 Plotly.d3.csv(CSV, function(err, rows) {
@@ -21,7 +21,7 @@
                 while (i < allRows.length) {
                     row = allRows[i];
                     x.push(row["datetime"]);
-                    y1.push(row["ET"]);
+                    y1.push(row["NDVI"]);
                     i += 1;
                 }
             
@@ -61,8 +61,8 @@
                     {
                         x: x,
                         y: y1,
-                        name: "Evapotranspiration",
-                        hovertemplate: 'Evapotranspiration: %{y}<extra></extra>',
+                        name: "NDVI",
+                        hovertemplate: 'NDVI: %{y}<extra></extra>',
                         line: {
                             color: "#387fba",
                             width: 3
@@ -72,7 +72,7 @@
                 ];
                 let layout = {
                     yaxis: {
-                        range: [-10, 80]
+                        range: [0.2, 0.8]
                     },
                     xaxis: {
                         rangeselector: selectorOptions,
@@ -86,15 +86,15 @@
   
                 
   
-                Plotly.newPlot("plot", traces, layout, config);
+                Plotly.newPlot("ndvi", traces, layout, config);
             }
             plotFromCSV();
   
   
-          </script>
+        </script>
         <div class="history" style="width: 100%">
-            <div id="plot" >
+            <div id="ndvi" >
             </div>
-          </div>
+        </div>
     </body>
 </html>

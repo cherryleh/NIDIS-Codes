@@ -14,12 +14,7 @@ body {
     margin-top: auto;
     background-color: #e7ecef;
     text-align: center;
-    /*flex-shrink: 0;
-    
 
-    
-    
-    padding-top: 10px;*/
 }
 
 .footercontent a {
@@ -41,6 +36,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-size: 12px;
+    padding-bottom: 1%;
 }
 
 

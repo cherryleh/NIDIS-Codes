@@ -1,4 +1,15 @@
 
+var request = require('request');
+request.get('https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        var csv = body;
+        // Continue with your processing here.
+        let test = csv.split(' ');
+        value = test[test.length - 1];
+        console.log(oni);
+
+    }
+});
 anychart.onDocumentReady(function () {
   var gauge = anychart.gauges.circular();
   gauge
@@ -16,7 +27,7 @@ anychart.onDocumentReady(function () {
     .fontSize(14)
     .position('outside')
 
-var value =-0.50;
+
 
 if (value<=3.0 && value>=1.1){
   condition = "Strong El Nino"
