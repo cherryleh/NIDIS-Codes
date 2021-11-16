@@ -249,7 +249,7 @@
           </button>
         </h2>
         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body" style="height: 120%; width: 100%">
+            <div class="accordion-body" style="height: 110%; width: 100%">
                 <div id="radio">
                     <form style="display: inline; border: none; box-shadow: none">
                         <input type="radio" name="bn" value="0" /> Rainfall
@@ -265,30 +265,30 @@
                     <div class="name"> <p class="name">Temperature</p></div>
                 </div>
                 <div id="ET" class="myDiv">
-                    <div class="name"> <p>Evapotranspiration</p> </div>
+                    <div class="name popup" onclick="popupFunction()"> <p>Evapotranspiration (mm/8 days)</p> <span class="popuptext" id="myPopup">A Simple Popup!</span></div>
                     <div class="wrap">
                         <div class="div1">
                             <img src="./islands/HI/RS4_et.png">
-                            <p> Evapotranspiration is the combination of processes that takes water from the surface and transforms it into water vapor in the air Source: Earth Engine</p>
+                            <!--<p> Evapotranspiration is the combination of processes that takes water from the surface and transforms it into water vapor in the air Source: Earth Engine</p>-->
                         </div>
                     </div>
                     <div class="wrap">
                         <div class="div3">
                             <div class="graph">
-                                <img src="./images/Palani Ranch.png">
+                                <img src="./graphs/RS01_ET.png">
                             </div> 
                         </div>
                     </div>
                     <div class="history">
-                      <img src="./graphs/RS1_et_history.png">
+                      <p> Historical Data </p>
+                      <img src="./graphs/RS01_et_history.png">
                     </div>
                 </div>
                 <div id="NDVI" class="myDiv">
-                  <div class="name"><p class="name">NDVI</p> </div>   
+                  <div class="name popup"><p class="name">NDVI</p> </div>   
                 <div class="wrap">
                     <div class="div1">
                         <img src="./islands/HI/RS4_et.png">
-                        <p> NDVI is... the map above... the chart... Source: Earth Engine</p>
                     </div>
                 </div>
                 <div class="wrap">
@@ -300,6 +300,8 @@
                 </div>
                 <div class="history">
                   <div id="ndvi">
+                    <p> Historical Data </p>
+                    <img src="./graphs/RS01_ndvi_history.png">
                   </div>
                 </div>
               </div>
@@ -376,7 +378,11 @@
                           function showDiv() {
                              document.getElementById('results').style.display = "block";
                           }
-
+                          
+                          function popupFunction() {
+                            var popup = document.getElementById("myPopup");
+                            popup.classList.toggle("show");
+                        }
                       </script>
               </div>
         </div>
@@ -390,19 +396,19 @@
         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
           <div class="accordion-body" id="section 3">
             <div id="rainProj" class="sec3heading">
-              <h5> 3-Month Rainfall Projections </h5>
-              <img src="./graphs/RS1_rainfall.png">
+              <h5> <span>3-Month Rainfall Projections </span></h5>
+              <img src="./graphs/RS01_rainfall.png">
             </div>
             <div id="rainHist" class="sec3heading">
-              <h5> Average Rainfall and Temperature </h5>
+              <h5><span> Average Rainfall and Temperature </span></h5>
               <img src=" ./RS01_BI/RS01_BI_Climograph.png">
             </div>
             <div id="rainTrend" class="sec3heading">
-              <h5> 100-year Rainfall Trends</h5>
+              <h5> <span>100-year Rainfall Trends</span></h5>
               <img src="./RS01_BI/RS01_BI_RF_Trend.png">
             </div>
             <div id="droughtHist" class="sec3heading">
-              <h5> 100-year Drought History</h5>
+              <h5><span> 100-year Drought History</span></h5>
               <img src="./RS01_BI/RS01_BIDrought_History.png">
             </div>
             
