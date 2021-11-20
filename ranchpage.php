@@ -116,95 +116,7 @@
 
 
     </script>
-    <!--<script>
-        const CSV = "ndvi_df.csv"
-  
-        function plotFromCSV() {
-            Plotly.d3.csv(CSV, function(err, rows) {
-                console.log(rows);
-                processData(rows);
-            });
-        }
-  
-        function processData(allRows) {
-            let x = [];
-            let y1 = [];
-            let row;
-            let i = 0;
-            while (i < allRows.length) {
-                row = allRows[i];
-                x.push(row["datetime"]);
-                y1.push(row["NDVI"]);
-                i += 1;
-            }
-            
-            console.log("X", x);
-            console.log("Y1", y1);
-            makePlotly(x, y1,);
-        }
-  
-        var selectorOptions = {
-            buttons: [{
-                step: 'month',
-                stepmode: 'backward',
-                count: 1,
-                label: '1m'
-            }, {
-                step: 'month',
-                stepmode: 'backward',
-                count: 6,
-                label: '6m'
-            }, {
-                step: 'year',
-                stepmode: 'todate',
-                count: 1,
-                label: 'YTD'
-            }, {
-                step: 'year',
-                stepmode: 'backward',
-                count: 1,
-                label: '1y'
-            }, {
-                step: 'all',
-            }],
-        };
-  
-        function makePlotly(x, y1) {
-            let traces = [
-                {
-                    x: x,
-                    y: y1,
-                    name: "NDVI",
-                    hovertemplate: 'NDVI: %{y}<extra></extra>',
-                    line: {
-                        color: "#387fba",
-                        width: 3
-                    }
-                        
-                }
-            ];
-            let layout = {
-                yaxis: {
-                    range: [0.2, 0.8]
-                },
-                xaxis: {
-                    rangeselector: selectorOptions,
-                    rangeslider: {}
-                },
-            };
-            let config = { 
-                responsive: true,
-                displayModeBar: true,
-            };
-  
-                
-  
-            Plotly.newPlot("ndvi", traces, layout, config);
-        }
-        plotFromCSV();
-  
-  
-    </script>-->
+
     <script>
       $(document).ready(function(){
         $("input[name$='bn']").click(function(){
@@ -240,7 +152,7 @@
       });
     </script>
 
-    <h5 id = "ranchsquare"> RS01 </h5>
+    <h5 id = "ranchsquare"> RS04 </h5>
     <div class="accordion" id="accordionPanelsStayOpenExample">
       <div class="accordion-item">
         <h2 class="accordion-header" id="panelsStayOpen-headingOne">
@@ -249,7 +161,7 @@
           </button>
         </h2>
         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body" style="height: 110%; width: 100%">
+            <div class="accordion-body" style="height: 130%; width: 100%">
                 <div id="radio">
                     <form style="display: inline; border: none; box-shadow: none">
                         <input type="radio" name="bn" value="0" /> Rainfall
@@ -265,7 +177,8 @@
                     <div class="name"> <p class="name">Temperature</p></div>
                 </div>
                 <div id="ET" class="myDiv">
-                    <div class="name popup" onclick="popupFunction()"> <p>Evapotranspiration (mm/8 days)</p> <span class="popuptext" id="myPopup">A Simple Popup!</span></div>
+                    <div class="name popup" onclick="popupFunction()"> <p>Evapotranspiration (mm/8 days)</p>
+                      <span class="popuptext" id="myPopup"><strong style="font-size:12px">Evapotranspiration</strong> is the combination of processes that takes water from the surface and transforms it into water vapor in the air. These processes include the movement of water through plant roots and the evaporation of that water through pores in the plant’s leaves, a process called transpiration. Water on the outsides of leaves, such as water deposited by rain or fog interception, can be evaporated, a process called wet canopy evaporation. Water can also evaporate directly from moist soil, soil evaporation. To learn more, click <a href="http://evapotranspiration.geography.hawaii.edu/">here.</a></span></div>
                     <div class="wrap">
                         <div class="div1">
                             <img src="./islands/HI/RS4_et.png">
@@ -275,13 +188,13 @@
                     <div class="wrap">
                         <div class="div3">
                             <div class="graph">
-                                <img src="./graphs/RS01_ET.png">
+                                <img src="./graphs/RS04_ET.png">
                             </div> 
                         </div>
                     </div>
                     <div class="history">
                       <p> Historical Data </p>
-                      <img src="./graphs/RS01_et_history.png">
+                      <img src="./graphs/RS04_et_history.png">
                     </div>
                 </div>
                 <div id="NDVI" class="myDiv">
@@ -294,14 +207,14 @@
                 <div class="wrap">
                     <div class="div3">
                         <div class="graph">
-                            <img src="./graphs/Palani Ranch_ndvi.png">
+                            <img src="./graphs/RS04_ndvi.png">
                         </div> 
                     </div>
                 </div>
                 <div class="history">
                   <div id="ndvi">
                     <p> Historical Data </p>
-                    <img src="./graphs/RS01_ndvi_history.png">
+                    <img src="./graphs/RS04_ndvi_history.png">
                   </div>
                 </div>
               </div>
@@ -309,12 +222,28 @@
         </div>
       </div>
       <div class="accordion-item">
-        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-            Animal Management, Decision Support and Forecasts
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Rainfall Forecast
           </button>
         </h2>
-        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+          <img src="./gauge/gauge-2.png" style="width: 30%; display: block; margin-left: auto;margin-right: auto;">
+          <div id="rainProj" class="sec3heading">
+              <h5> <span>3-Month Rainfall Projections </span></h5>
+              <img src="./graphs/RS04_rainfall.png">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+            Animal Management and Decision Support
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
         <div class="accordion-body" id="body2">
                 <p style="text-align: center"> The Decision support tool asks for four inputs: Grass type, dry matter per animal unit, number of animal units, and number of acres grazed.</p>
                 
@@ -346,14 +275,14 @@
                 <br>
 
                       <script>
-                        /*var grasstype = $("#grasstype").val();
-                          var drymatter = $("#drymatter").val();
-                          var animalunits = $("#animalunits").val();
-                          var acres = $("#acres").val();
-                          $.post("new.php", { grasstype: grasstype, drymatter:drymatter, animalunits:animalunits, acres:acres },
-                          function(data) {
-                           $('#results').html(data);
-                          });*/
+                          var input = document.getElementById("input");
+                           input.addEventListener("keydown", function (e) {
+                            if (e.key === "Enter") {  
+                              e.preventDefault();
+                              document.getElementById("submit").click();
+                            }
+                          });
+
                           function SubmitFormData() {
                               var x = document.forms["myForm"]["animalunits"].value;
                                 if (x == "" || x == null) {
@@ -388,28 +317,25 @@
         </div>
       </div>
       <div class="accordion-item">
-        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-            Past Droughts and Future Projections
+        <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+            Historical Data
           </button>
         </h2>
-        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
           <div class="accordion-body" id="section 3">
-            <div id="rainProj" class="sec3heading">
-              <h5> <span>3-Month Rainfall Projections </span></h5>
-              <img src="./graphs/RS01_rainfall.png">
-            </div>
+            
             <div id="rainHist" class="sec3heading">
               <h5><span> Average Rainfall and Temperature </span></h5>
-              <img src=" ./RS01_BI/RS01_BI_Climograph.png">
+              <img src=" ./RanchPointsRF/RS04_BI/RS04_BI_Climograph.png">
             </div>
             <div id="rainTrend" class="sec3heading">
               <h5> <span>100-year Rainfall Trends</span></h5>
-              <img src="./RS01_BI/RS01_BI_RF_Trend.png">
+              <img src="./RanchPointsRF/RS04_BI/RS04_BI_RF_Trend.png">
             </div>
             <div id="droughtHist" class="sec3heading">
               <h5><span> 100-year Drought History</span></h5>
-              <img src="./RS01_BI/RS01_BIDrought_History.png">
+              <img src="./RanchPointsRF/RS04_BI/RS04_BIDrought_History.png">
             </div>
             
           </div> 

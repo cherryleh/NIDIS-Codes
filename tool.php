@@ -77,8 +77,8 @@ if ($oni > 1.1) {
 }
 
 //Read rainfall query table
-$ranch = "RS01";
-$ranchurl = "./". $ranch  . "_BI/" . $ranch . "_BI_RF_Query_Table.csv";
+$ranch = "RS04";
+$ranchurl = "./RanchPointsRF/". $ranch  . "_BI/" . $ranch . "_BI_RF_Query_Table.csv";
 
 $querytable = fopen($ranchurl, "r");
 
@@ -93,6 +93,40 @@ while (($row = fgetcsv($querytable, 0, ",")) !== FALSE) {
     $QFP_Mn = $row[16];
     
 }}
+
+if ($QFP_Me >= 0){
+    $QFP_Me_Res = 'Better than average production expected';
+    $QFP_Me_Col = 'black';
+} elseif ($QFP_Me < 0 and $QFP>=50){
+    $QFP_Me_Res = 'Less than average production expected';
+    $QFP_Me_Col = 'black';
+} elseif ($QFP_Me < -50){
+    $QFP_Me_Res = 'Less than average production expected, potential to request funds';
+    $QFP_Me_Col = 'red';
+}
+
+if ($QFP_Mn >= 0){
+    $QFP_Mn_Res = 'Better than average production expected';
+    $QFP_Mn_Col = 'black';
+} elseif ($QFP_Mn < 0 and $QFP>=50){
+    $QFP_Mn_Res = 'Less than average production expected';
+    $QFP_Mn_Col = 'black';
+} elseif ($QFP_Mn < -50){
+    $QFP_Mn_Res = 'Less than average production expected, potential to request funds';
+    $QFP_Mn_Col = 'red';
+}
+
+if ($QFP_Me >= 0){
+    $QFP_Me_Arrow = '&#8679';
+} elseif ($QFP_Me < 0){
+    $QFP_Me_Arrow = '&#8681';
+}
+
+if ($QFP_Mn >= 0){
+    $QFP_Mn_Arrow = '&#8679';
+} elseif ($QFP_Mn < 0){
+    $QFP_Mn_Arrow = '&#8681';
+}
 
 #echo 'MnQFP: ' . $row[16] .'<br>';
 
@@ -133,9 +167,41 @@ if ($PR_Min >1){
 } else 
     $PR_Mn = $PR_Min;
 
+if ($PR_Me >= 0.5){
+    $PR_Me_Res = 'Site is stable';
+    $PR_Me_Col = 'black';
+} elseif ($PR_Me < 0.5){
+    $PR_Me_Res = 'Site is unstable';
+    $PR_Me_Col = 'red';
+}
+
+if ($PR_Mn >= 0.5){
+    $PR_Mn_Res = 'Site is stable';
+    $PR_Mn_Col = 'black';
+} elseif ($QFO_Mn < 0.5){
+    $PR_Mn_Res = 'Site is unstable';
+    $PR_Mn_Col = 'red';
+}
+
 //Grazing Days
 $GD_Me = round(($SP_Me*0.5)/($animalunits*$drymatter),2);
 $GD_Mn = round(($SP_Mn*0.5)/($animalunits*$drymatter),2);
+
+if ($GD_Me >= $numberdays){
+    $GD_Me_Res = 'Stock or do nothing';
+    $GD_Me_Col = 'black';
+} elseif ($GD_Me < $numberdays){
+    $GD_Me_Res = 'De-Stock or supplement feeding';
+    $GD_Me_Col = 'red';
+}
+
+if ($GD_Mn >= $numberdays){
+    $GD_Mn_Res = 'Stock or do nothing';
+    $GD_Mn_Col = 'black';
+} elseif ($GD_Mn < $numberdays){
+    $GD_Mn_Res = 'De-Stock or supplement feeding';
+    $GD_Mn_Col = 'red';
+}
 
 #echo 'MeGD: ' . $GD_Me . '<br>';
 #echo 'MnGD: ' . $GD_Mn . '<br>';
@@ -151,14 +217,14 @@ echo '<div id="output" >
 </tr>
 <tr>
 <td class="left"> Historical Average </td>
-<td id="num">' . $QFP_Me . '<span>&#8595;</span> </td>
-<td class="right" style="color:red"> <span style="color:black">&#10230;</span> Potential to request funding</td>
+<td id="num">' . $QFP_Me . '%<span>'.$QFP_Me_Arrow.';</span> </td>
+<td class="right"> <span style="display:inline-block;float:left">&#10230;</span> <div style="display:inline;color:'.$QFP_Me_Col.'">'. $QFP_Me_Res.'</div></td>
 
 </tr>
 <tr>
 <td class="left"> Historical Low </td>
-<td id="num">' . $QFP_Mn . '<span>&#8595;</span> </td>
-<td class="right" style="color:red"> <span style="color:black">&#10230;</span> Potential to request funding </td>
+<td id="num">' . $QFP_Mn . '%<span>'.$QFP_Mn_Arrow.';</span> </td>
+<td class="right"> <span style="color:black; display:inline-block;float:left">&#10230;</span> <div style="display:inline;color:'.$QFP_Mn_Col.'">'. $QFP_Mn_Res.'</div></td>
 </tr> 
 <tr>
 <td id="datatitle" colspan="3">'. $monthtitle . ' Production Ratio</td>
@@ -166,26 +232,26 @@ echo '<div id="output" >
         <tr>
             <td class="left"> Historical Average </td>
             <td id="num"> '.$PR_Me .'</td>
-            <td class="right" style="color:black"><span style="color:black">&#10230;</span> Site is stable</td>
+            <td class="right" style="color:'.$PR_Me_Col.'"><span style="color:black">&#10230;</span> '.$PR_Me_Res.'</td>
 
         </tr>
         <tr>
             <td class="left"> Historical Low </td>
             <td id="num">'. $PR_Mn .'</td>
-            <td class="right" style="color:red"><span style="color:black">&#10230;</span> Site is unstable </td>
+            <td class="right" style="'.$PR_Mn_Col.'"><span style="color:black">&#10230;</span> '.$PR_Mn_Res.'</td>
         </tr>
         <tr><td id="datatitle" colspan="3"> '.$monthtitle.' Grazing Days</td>
         </tr>
         <tr>
             <td class="left"> Historical Average </td>
             <td id="num">'. $GD_Me . '</td>
-            <td class="right" style="color:red"><span style="color:black">&#10230;</span> De-stock or supplement feeding</td>
+            <td class="right" style="color:'.$GD_Me_Col.'"><span style="color:black">&#10230;</span> '. $GD_Me_Res .'</td>
 
         </tr>
         <tr>
             <td class="left"> Historical Low </td>
             <td id="num">' . $GD_Mn . '</td>
-            <td class="right" style="color:red"><span style="color:black">&#10230;</span> De-stock or supplement feeding </td>
+            <td class="right" style="color:'.$GD_Mn_Col.'"><span style="color:black">&#10230;</span> '.$GD_Mn_Res.'</td>
         </tr>
     </table>
     </div>'

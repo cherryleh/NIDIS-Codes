@@ -27,8 +27,10 @@ body {
     padding-bottom: 10px;
 }
 
+.name{
+    display: block;
+}
 .name p{
-    display: inline-block;
     text-align: center;
     color: black;
     font-size: 16px;
@@ -46,10 +48,11 @@ body {
     text-align: center;
 }
 
+
 .wrap{
     float:left;
     width:48%;
-    height: 40%;
+    height: 45%;
     display: flex;
     align-items: center;
 }
@@ -58,16 +61,16 @@ body {
 
     width:70%;
     text-align: right;   
-    margin-left: auto; 
+    margin-left: 2%; 
     margin-right: auto;
     vertical-align: middle;
 }
 
 .div1 img{
-    width: 100%;
+    width: 120%;
     display: block;
-    margin-left: 10%;
-    margin-right: auto;
+    margin-right: 5%;
+
 }
 
 .popup {
@@ -79,20 +82,29 @@ body {
     user-select: none;
   }
 
-.popup .popuptext {
+.popup .popuptext{
     visibility: hidden;
     width: 250px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
+    background-color: #fff;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    color: black;
+    text-align: left;
+    border-radius: 2px;
+    padding: 2px 0;
     position: absolute;
     z-index: 2;
-    bottom: 125%;
-    left: 50%;
+    bottom: -150%;
+    left: 55%;
     margin-left: -80px;
+    font-size: 12px;
+    box-shadow: 0 2px 2px #ccc; 
   }
+
+.popuptext a{
+    font-size: 12px;
+}
 /* Popup arrow */
 
 .popup .show {
@@ -116,25 +128,26 @@ body {
 .div3 {
 
     width:80%;
-    display: inline-block;
+    display: block;
     margin-left: auto;
     margin-right: 0;
 
 }
 
 .div3 img{
-    width: 120%;
+    width: 150%;
     display: block;
     margin-left: -50%;
+    padding-top: 5%;
 }
 
 .history{
     display: inline-block;
+
 }
 
 .history p{
-
-    padding-top: 1%;
+    padding-top: 3%;
 }
 
 .history img{
@@ -142,7 +155,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     display: block;
-
 }
 
 .error{
@@ -169,7 +181,7 @@ body {
     margin-bottom: 0 !important;
 }
 #rainproj img{
-    width: 50%;
+    width: 80%;
 }
 #rainHist img{
     width: 40%;

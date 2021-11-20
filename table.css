@@ -13,21 +13,21 @@ th{
     padding-bottom: 5px;
 }
 table{
-    width: 50%;
+    width: 60%;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
 }
 .left{
     text-align: left;
-    padding-left: 150px;
+    padding-left: 40px;
     width: 40%;
 }
 
 
 
 #datatitle{
-    padding-left: 20px;
+    padding-left: 10px;
     cursor: help;
 }
 
