@@ -56,13 +56,38 @@
             });
         </script>
 
+
         <div id="header">Header</div>
 
 
         
-            <div><h3 id="subcategory">Statewide Conditions - November, 2021</h3>
+            <h3 id="subcategory">Statewide Conditions - <p style="display:inline" id="month"></p>, <p style="display:inline; width: 100%" id="year"></p></h3>
+            <script>
+                const month = new Array();
+                month[0] = "January";
+                month[1] = "February";
+                month[2] = "March";
+                month[3] = "April";
+                month[4] = "May";
+                month[5] = "June";
+                month[6] = "July";
+                month[7] = "August";
+                month[8] = "September";
+                month[9] = "October";
+                month[10] = "November";
+                month[11] = "December";
+  
+                const d = new Date();
+                let name = month[d.getMonth()];
+                document.getElementById("month").innerHTML = name;
+                let year = d.getFullYear();
+                document.getElementById("year").innerHTML = year;
+            </script>
+            <div style='position: relative; top: 0; right: 0;'>
+              <div >&#9432;</div>
               <img src="./gauge/gauge-2.png" style="width: 30%; display: block; margin-left: auto;margin-right: auto;">
             </div>
+            
             
         <div class="content">
 
@@ -114,7 +139,7 @@
                       <input type="radio" name="bn" value="2" id="form-evapo"/> Evapotranspiration
                     </form>
                       <div id="nodataHI">
-                        <img id="a" style="width: auto" src="./islands/HIisl.png" usemap="#HI">
+                        <img id="a"  src="./islands/HIisl.png" usemap="#HI">
 
                         <map name="HI">
                           <area target="" alt="" title="" href="./ranchpage.php" coords="109,39,97,25" shape="rect">
@@ -131,7 +156,7 @@
                       <div id="rainfallHI" style="padding-top: 150px; padding-bottom: 200px;">Coming Soon</div>
 
                       <div id="evapotranspirationHI">
-                        <img id="a" style="width: 45%" src="./islands/ET_Hi.png" usemap="#ET">
+                        <img id="a" style="width: auto" src="./islands/ET_Hi.png" usemap="#ET">
 
                         <map name="ET">
                             <area shape="rect" coords="209,22,220,31" alt="a" href="./imagemap.html">
@@ -142,11 +167,13 @@
                 </div>
 
                 <div id="showMaui" class="myDiv">
-                    <form>
-                        <input type="radio" name="bn" value="0"  checked="checked" /> No Data
-                        <input type="radio" name="bn" value="1" /> Rainfall
-                        <input type="radio" name="bn" value="2"/> Evapotranspiration
-                    </form>
+                      <p> Click on an area of interest to view site-specific data.</p>
+                      <p style="display: inline;"> Map view:</p>
+                      <form style="display: inline;">
+                        <input type="radio" name="bn" value="0"  checked="checked" id="form-no-data"/> No Data
+                        <input type="radio" name="bn" value="1" id="form-rain-fall"/> Rainfall
+                        <input type="radio" name="bn" value="2" id="form-evapo"/> Evapotranspiration
+                      </form>
                       <div id="nodataMaui">
                         <img id="a" src="./islands/maui.png" usemap="#HI">
 
@@ -170,10 +197,12 @@
                 </div>
 
                 <div id="showKahoolawe" class="myDiv">
-                  <form>
-                      <input type="radio" name="bn" value="0"  checked="checked" /> No Data
-                      <input type="radio" name="bn" value="1" /> Rainfall
-                      <input type="radio" name="bn" value="2"/> Evapotranspiration
+                  <p> Click on an area of interest to view site-specific data.</p>
+                  <p style="display: inline;"> Map view:</p>
+                  <form style="display: inline;">
+                    <input type="radio" name="bn" value="0"  checked="checked" id="form-no-data"/> No Data
+                    <input type="radio" name="bn" value="1" id="form-rain-fall"/> Rainfall
+                    <input type="radio" name="bn" value="2" id="form-evapo"/> Evapotranspiration
                   </form>
                     <div id="nodataKahoolawe">
                       <img id="a" style="width:20%; height:auto" src="./islands/kahoolawe.png" usemap="#HI">
@@ -198,11 +227,13 @@
               </div>
 
                 <div id="showLanai" class="myDiv">
-                    <form>
-                        <input type="radio" name="bn" value="0"  checked="checked" /> No Data
-                        <input type="radio" name="bn" value="1" /> Rainfall
-                        <input type="radio" name="bn" value="2"/> Evapotranspiration
-                    </form>
+                  <p> Click on an area of interest to view site-specific data.</p>
+                  <p style="display: inline;"> Map view:</p>
+                  <form style="display: inline;">
+                    <input type="radio" name="bn" value="0"  checked="checked" id="form-no-data"/> No Data
+                    <input type="radio" name="bn" value="1" id="form-rain-fall"/> Rainfall
+                    <input type="radio" name="bn" value="2" id="form-evapo"/> Evapotranspiration
+                  </form>
                       <div id="nodataLanai">
                         <img id="a" style="width:20%; height:auto" src="./islands/lanai.png" usemap="#HI">
 
@@ -226,13 +257,34 @@
                 </div>
 
                 <div id="showMolokai" class="myDiv">
-                    <img style="width:50%; height:auto" src="./islands/molokai.png" alt="Moloka‘i"/>
+                  <p> Click on an area of interest to view site-specific data.</p>
+                  <p style="display: inline;"> Map view:</p>
+                  <form style="display: inline;">
+                    <input type="radio" name="bn" value="0"  checked="checked" id="form-no-data"/> No Data
+                    <input type="radio" name="bn" value="1" id="form-rain-fall"/> Rainfall
+                    <input type="radio" name="bn" value="2" id="form-evapo"/> Evapotranspiration
+                  </form>
+                    <div id="nodataMolokai"><img style="width:50%; height:auto" src="./islands/molokai.png" alt="Moloka‘i"/></div>
                 </div>
                 <div id="showOahu" class="myDiv">
-                    <img style="width:30%; height:auto" src="./islands/oahu.png" alt="O‘ahu"/>
+                  <p> Click on an area of interest to view site-specific data.</p>
+                  <p style="display: inline;"> Map view:</p>
+                  <form style="display: inline;">
+                    <input type="radio" name="bn" value="0"  checked="checked" id="form-no-data"/> No Data
+                    <input type="radio" name="bn" value="1" id="form-rain-fall"/> Rainfall
+                    <input type="radio" name="bn" value="2" id="form-evapo"/> Evapotranspiration
+                  </form>
+                    <div id="nodataOahu"> <img style="width:30%; height:auto" src="./islands/oahu.png" alt="O‘ahu"/></div>
                 </div>
                 <div id="showKauai" class="myDiv">
-                    <img style="width:30%; height:auto" src="./islands/kauai.png" alt="Kauai"/>
+                  <p> Click on an area of interest to view site-specific data.</p>
+                  <p style="display: inline;"> Map view:</p>
+                  <form style="display: inline;">
+                    <input type="radio" name="bn" value="0"  checked="checked" id="form-no-data"/> No Data
+                    <input type="radio" name="bn" value="1" id="form-rain-fall"/> Rainfall
+                    <input type="radio" name="bn" value="2" id="form-evapo"/> Evapotranspiration
+                  </form>
+                    <div id="nodataKauai"><img style="width:30%; height:auto" src="./islands/kauai.png" alt="Kauai"/></div>
                 </div>
 
             </div>

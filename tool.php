@@ -38,18 +38,27 @@ $animalunits = $_POST['animalunits'];
 $acres = $_POST['acres'];*/
 
 $date = new DateTime("now", new DateTimeZone('Pacific/Honolulu') );
+
 $thismonth = strtoupper($date->format('M'));
-$thismonthnum = strtoupper($date->format('m'));
-$thisyear = strtoupper($date->format('Y'));
+$thismonthnum = ($date->format('m'));
+$thisyear = ($date->format('Y'));
 //Number of days this month
 $numberdays = cal_days_in_month(CAL_GREGORIAN, $thismonthnum, $thisyear);
 
-$monthtitle = $date->format('F');
+$currentmonth = date('F');
+$lastmonth = Date('F', strtotime($currentMonth . " last month"));
+
+
+if ($thisdate < 8){
+    $monthtitle = $lastmonth;}
+else{
+    $monthtitle = $currentmonth;
+}
 
 //Return next month in all caps 3 letters
-$nm = new DateTime( "now", new DateTimeZone('Pacific/Honolulu') );
-$nm->modify( 'next month' );
-$nextmonth = strtoupper($nm->format( 'M' ));
+//$nm = new DateTime( "now", new DateTimeZone('Pacific/Honolulu') );
+//$nm->modify( 'next month' );
+//$nextmonth = strtoupper($nm->format( 'M' ));
 
 
 $file = file("https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt");
