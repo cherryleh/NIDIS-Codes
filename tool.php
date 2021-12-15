@@ -42,6 +42,7 @@ $date = new DateTime("now", new DateTimeZone('Pacific/Honolulu') );
 $thismonth = strtoupper($date->format('M'));
 $thismonthnum = ($date->format('m'));
 $thisyear = ($date->format('Y'));
+$thisdate = ($date->format('d'));
 //Number of days this month
 $numberdays = cal_days_in_month(CAL_GREGORIAN, $thismonthnum, $thisyear);
 
@@ -54,6 +55,8 @@ if ($thisdate < 8){
 else{
     $monthtitle = $currentmonth;
 }
+
+
 
 //Return next month in all caps 3 letters
 //$nm = new DateTime( "now", new DateTimeZone('Pacific/Honolulu') );
@@ -216,16 +219,23 @@ if ($GD_Mn >= $numberdays){
 #echo 'MnGD: ' . $GD_Mn . '<br>';
 #echo  $DFPQ;
 
-echo '<div id="output" >
+echo '
+
+<div id="output" >
 <table id=“multiLevelTable”>
     <tr id="month">
-        <th  colspan="3">  Historical characteristics under ' . $cond .' Conditions</td>
+        <th  colspan="3"> Historical characteristics under ' . $cond .' Conditions</td>
     </tr>
     <tr>
-        <td id="datatitle" colspan="3"> Quarterly Forage Production</td>
+
+            <td id="datatitle" class="tool" colspan="3">Quarterly Forage Production <span class="tooltext">Position better than average production is expected. <br>Negative less than average production is expected. <br>< -50 funds can be requested.
+        </span></td>
+
+
+
 </tr>
 <tr>
-<td class="left"> Historical Average </td>
+<td class="left"> Historical Average</td>
 <td id="num">' . $QFP_Me . '%<span>'.$QFP_Me_Arrow.';</span> </td>
 <td class="right"> <span style="display:inline-block;float:left">&#10230;</span> <div style="display:inline;color:'.$QFP_Me_Col.'">'. $QFP_Me_Res.'</div></td>
 
@@ -236,7 +246,8 @@ echo '<div id="output" >
 <td class="right"> <span style="color:black; display:inline-block;float:left">&#10230;</span> <div style="display:inline;color:'.$QFP_Mn_Col.'">'. $QFP_Mn_Res.'</div></td>
 </tr> 
 <tr>
-<td id="datatitle" colspan="3">'. $monthtitle . ' Production Ratio</td>
+<td id="datatitle" colspan="3" class="tool">'. $monthtitle . ' Production Ratio <span class="tooltext">>0.5 Site is stable <br> <0.5 site is unstable
+</span> </td>
         </tr>
         <tr>
             <td class="left"> Historical Average </td>
@@ -249,7 +260,9 @@ echo '<div id="output" >
             <td id="num">'. $PR_Mn .'</td>
             <td class="right" style="'.$PR_Mn_Col.'"><span style="color:black">&#10230;</span> '.$PR_Mn_Res.'</td>
         </tr>
-        <tr><td id="datatitle" colspan="3"> '.$monthtitle.' Grazing Days</td>
+        <tr>
+            <td id="datatitle" colspan="3" class="tool"> '.$monthtitle.' Grazing Days <span class="tooltext">> days in month - Stock or do nothing <br> < days in month - de-Stock or supplement feeding
+</span> </td>
         </tr>
         <tr>
             <td class="left"> Historical Average </td>
@@ -263,5 +276,37 @@ echo '<div id="output" >
             <td class="right" style="color:'.$GD_Mn_Col.'"><span style="color:black">&#10230;</span> '.$GD_Mn_Res.'</td>
         </tr>
     </table>
-    </div>'
+    </div>
+
+  
+  <style>
+  .tool {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tool .tooltext {
+    visibility: hidden;
+    width: 300px;
+    text-align: center;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    border-radius: 2px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+  }
+
+
+  .tool:hover .tooltext {
+    visibility: visible;
+  }
+  </style>
+
+'
 ?>

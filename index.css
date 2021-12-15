@@ -90,3 +90,46 @@ html, body {
     width: auto;
     height: auto;
 }
+
+.popup {
+    position: relative;
+    cursor: help;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+.popup .gaugepopuptext{
+    visibility: hidden;
+    width: 250px;
+    background-color: #fff;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    color: black;
+    text-align: justify;
+    text-justify: inter-word;
+    border-radius: 2px;
+    padding: 5px;
+    position: absolute;
+    z-index: 2;
+    top: 10%;
+    margin-left: 0px;
+    font-size: 12px;
+    box-shadow: 0 2px 2px #ccc; 
+
+  }
+
+
+/* Popup arrow */
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+.gauge-i{
+    cursor: help;
+}

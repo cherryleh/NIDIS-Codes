@@ -27,95 +27,6 @@
 
   <body>
     <div id="header">Header</div>
-    <script>
-      const etCSV = "et_df.csv"
-
-      function plotFromCSV() {
-          Plotly.d3.csv(etCSV, function(err, rows) {
-              console.log(rows);
-              processData(rows);
-          });
-      }
-
-      function processData(allRows) {
-          let x = [];
-          let y1 = [];
-          let row;
-          let i = 0;
-          while (i < allRows.length) {
-              row = allRows[i];
-              x.push(row["datetime"]);
-              y1.push(row["ET"]);
-              i += 1;
-          }
-          
-          console.log("X", x);
-          console.log("Y1", y1);
-          makePlotly(x, y1,);
-      }
-
-      var selectorOptions = {
-          buttons: [{
-              step: 'month',
-              stepmode: 'backward',
-              count: 1,
-              label: '1m'
-          }, {
-              step: 'month',
-              stepmode: 'backward',
-              count: 6,
-              label: '6m'
-          }, {
-              step: 'year',
-              stepmode: 'todate',
-              count: 1,
-              label: 'YTD'
-          }, {
-              step: 'year',
-              stepmode: 'backward',
-              count: 1,
-              label: '1y'
-          }, {
-              step: 'all',
-          }],
-      };
-
-      function makePlotly(x, y1) {
-          let traces = [
-              {
-                  x: x,
-                  y: y1,
-                  name: "Evapotranspiration",
-                  hovertemplate: 'Evapotranspiration: %{y}<extra></extra>',
-                  line: {
-                      color: "#387fba",
-                      width: 3
-                  }
-                      
-              }
-          ];
-          let layout = {
-              yaxis: {
-                  range: [-10, 80]
-              },
-              xaxis: {
-                  rangeselector: selectorOptions,
-                  rangeslider: {}
-              },
-          };
-          let config = { 
-              /*responsive: true,*/
-              displayModeBar: true,
-          };
-
-              
-
-          Plotly.newPlot("plot", traces, layout, config);
-      }
-      plotFromCSV();
-
-
-    </script>
 
     <script>
       $(document).ready(function(){
@@ -178,7 +89,8 @@
                 </div>
                 <div id="ET" class="myDiv">
                     <div class="name popup" onclick="popupFunction()"> <p>Evapotranspiration (mm/8 days)</p>
-                      <span class="popuptext" id="myPopup"><strong style="font-size:12px">Evapotranspiration</strong> is the combination of processes that takes water from the surface and transforms it into water vapor in the air. These processes include the movement of water through plant roots and the evaporation of that water through pores in the plant’s leaves, a process called transpiration. Water on the outsides of leaves, such as water deposited by rain or fog interception, can be evaporated, a process called wet canopy evaporation. Water can also evaporate directly from moist soil, soil evaporation. To learn more, click <a href="http://evapotranspiration.geography.hawaii.edu/">here.</a></span></div>
+                      <span class="popuptext" id="myPopup"><strong style="font-size:12px">Evapotranspiration</strong> is the combination of processes that takes water from the surface and transforms it into water vapor in the air. These processes include the movement of water through plant roots and the evaporation of that water through pores in the plant’s leaves, a process called transpiration. Water on the outsides of leaves, such as water deposited by rain or fog interception, can be evaporated, a process called wet canopy evaporation. Water can also evaporate directly from moist soil, soil evaporation. To learn more, click <a href="http://evapotranspiration.geography.hawaii.edu/">here.</a></span>
+                    </div>
                     <div class="wrap">
                         <div class="div1">
                             <img src="./islands/HI/RS4_et.png">
