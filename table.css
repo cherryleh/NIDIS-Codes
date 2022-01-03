@@ -11,6 +11,7 @@ th{
     text-align: left;
     padding-top: 5px;
     padding-bottom: 5px;
+    font-weight: normal !important;
 }
 table{
     width: 60%;
@@ -44,7 +45,7 @@ table{
 .popup .gaugepopuptext{
     visibility: hidden;
     width: 250px;
-    background-color: #fff;
+    background-color: #000;
     border-style: solid;
     border-width: thin;
     border-color: black;

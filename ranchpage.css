@@ -28,14 +28,13 @@ body {
 }
 
 .name{
-    display: block;
+
 }
 .name p{
     text-align: center;
     color: black;
     font-size: 16px;
-    cursor: help;
-
+    display: inline-block;
 }
 
 .accordion{
@@ -73,45 +72,6 @@ body {
 
 }
 
-.popup {
-    position: relative;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-.popup .popuptext{
-    visibility: hidden;
-    width: 250px;
-    background-color: #fff;
-    border-style: solid;
-    border-width: thin;
-    border-color: black;
-    color: black;
-    text-align: left;
-    border-radius: 2px;
-    padding: 2px 0;
-    position: absolute;
-    z-index: 2;
-    bottom: -150%;
-    left: 55%;
-    margin-left: -80px;
-    font-size: 12px;
-    box-shadow: 0 2px 2px #ccc; 
-  }
-
-.popuptext a{
-    font-size: 12px;
-}
-/* Popup arrow */
-
-.popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-}
 
 /*.div1 p{
     width: 60%;
@@ -194,3 +154,64 @@ body {
 #droughtHist img{
     width: 40%;
 }
+
+.tool {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tool .tooltext {
+    visibility: hidden;
+    width: 17vw;
+    background-color: #fff;
+    text-align: center;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    border-radius: 2px;
+    padding: 0.1vw;
+    
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+    text-align: left;
+  }
+
+
+  .tool:hover .tooltext {
+    visibility: visible;
+  }
+
+  .i{
+    position: relative;
+    display: inline;
+    width: 100%;
+  }
+  
+  .i a{
+      font-size: 12px;
+  }
+  .i .tooltext {
+      font-size: 12px;
+    visibility: hidden;
+    width: 30vw;
+    background-color: #fff;
+    text-align: center;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    border-radius: 2px;
+    padding: 0.1vw;
+    position: absolute;
+    z-index: 2;
+    top: 10%;
+    left: 15%;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+
+  .i:hover .tooltext {
+    visibility: visible;
+  }

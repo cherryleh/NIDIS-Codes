@@ -88,13 +88,16 @@
                     <div class="name"> <p class="name">Temperature</p></div>
                 </div>
                 <div id="ET" class="myDiv">
-                    <div class="name popup" onclick="popupFunction()"> <p>Evapotranspiration (mm/8 days)</p>
-                      <span class="popuptext" id="myPopup"><strong style="font-size:12px">Evapotranspiration</strong> is the combination of processes that takes water from the surface and transforms it into water vapor in the air. These processes include the movement of water through plant roots and the evaporation of that water through pores in the plant’s leaves, a process called transpiration. Water on the outsides of leaves, such as water deposited by rain or fog interception, can be evaporated, a process called wet canopy evaporation. Water can also evaporate directly from moist soil, soil evaporation. To learn more, click <a href="http://evapotranspiration.geography.hawaii.edu/">here.</a></span>
-                    </div>
+                      <div class="name"> 
+                        <p>Evapotranspiration (mm/8 days) </p>
+                        <div class="i"> &#9432;
+                          <span class="tooltext">Evapotranspiration is the combination of processes that takes water from the surface and transforms it into water vapor in the air. These processes include the movement of water through plant roots and the evaporation of that water through pores in the plant’s leaves, a process called transpiration. Water on the outsides of leaves, such as water deposited by rain or fog interception, can be evaporated, a process called wet canopy evaporation. Water can also evaporate directly from moist soil, soil evaporation. To learn more, click <a href="http://evapotranspiration.geography.hawaii.edu/" target="_blank">here.</a>
+                          </span>
+                          </div>
+                      </div>
                     <div class="wrap">
                         <div class="div1">
-                            <img src="./islands/HI/RS4_et.png">
-                            <!--<p> Evapotranspiration is the combination of processes that takes water from the surface and transforms it into water vapor in the air Source: Earth Engine</p>-->
+                            <img src="./islands/HI/RS04_et.png">
                         </div>
                     </div>
                     <div class="wrap">

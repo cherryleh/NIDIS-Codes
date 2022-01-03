@@ -63,8 +63,20 @@
 
 
         <div id="header">Header</div>
+        <div class="headerimg">
+          <img src="./ParkerRanch.jpeg"  alt="Placeholder-Image">
+          <div class= "imgtext">
+            <h1>Welcome to H-RIP</h1>
+            <button>Read more.</button>
+          </div>
+        </div>
+        <!--<div class = "imgcontainer" style="background: black;">
+          <img class="image" src="./ParkerRanch.jpeg" style="width: 100%; object-fit: cover; opacity: 0.8;">
+          <div class="overlay">
+            <p>Welcome to H-RIP</p>
+          </div>
 
-
+        </div>-->
         
             <h3 id="subcategory">Statewide Conditions - <p style="display:inline" id="month"></p>, <p style="display:inline; width: 100%" id="year"></p></h3>
             <script>
@@ -89,9 +101,9 @@
                 document.getElementById("year").innerHTML = year;
             </script>
         <div style="position: relative; top: 0; right: 0;display: flex;margin-left: auto;margin-right: auto;justify-content: center;">
-          <img src="./gauge/gauge-2.png" style="width: 30%; display: block; ">
-          <div class="gauge-i popup" onclick="popupFunction()">&#9432;
-            <span class="gaugepopuptext" id="myPopup">
+          <img src="./gauge/gauge.png" style="width: 30%; display: block; ">
+          <div class="gauge-i tool">&#9432;
+            <span class="tooltext" >
               This gauge displays current El Ni&#241;o-Southern Oscillation (ENSO) conditions based on the monthly Oceanic Ni&#241;o Index (ONI) value released by the National Weather Service Climate Prediction Center. This gauge is updated on the 8th of every month. For more info on ENSO and ONI click <a href=”https://www.climate.gov/news-features/understanding-climate/climate-variability-oceanic-ni%C3%B1o-index”> here</a>.
             </span>
           </div>
@@ -101,22 +113,22 @@
             
         <div class="content">
 
-          <div class="flex-container">
+          <div class="flex-container" >
 
             <div class="flex-child" id="windy">
               <iframe id = "windy" width="450" height="250" style="display: block; padding-right: 5%;" src="https://embed.windy.com/embed2.html?lat=20.689&lon=-157.843&detailLat=20.589&detailLon=-159.173&width=450&height=250&zoom=6&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=12&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
             </div>
   
-            <div class="flex-child">
+            <div class="flex-child" style="margin-left: 5%;">
               <a href="http://droughtmonitor.unl.edu/data/jpg/current/current_hi_trd.jpg" target="_blank">
-                <img style="width: 400px; height: auto; padding-left: 5%" src="http://droughtmonitor.unl.edu/data/jpg/current/current_hi_trd.jpg"></a>
-              <p style="text-align: left;"> Source: <a href="https://droughtmonitor.unl.edu/">National Drought Mitigation Center (NDMC)</a></p>
+                <img style="width: 400px; height: auto; border: 2px solid;" src="http://droughtmonitor.unl.edu/data/jpg/current/current_hi_trd.jpg"></a>
+              <p style="text-align: left;"> Source: <a href="https://droughtmonitor.unl.edu/" target="_blank">National Drought Mitigation Center (NDMC)</a></p>
             </div>
   
           </div>
                 
             
-            <div class="sitespecific">
+            <div class="sitespecific" id="ranch">
                 <h3 id="subcategory">Site-specific Conditions</h3>
 
                 <p style="text-align: center;">Select an island from the dropdown below.</p>
@@ -166,7 +178,7 @@
                       <div id="rainfallHI" style="padding-top: 150px; padding-bottom: 200px;">Coming Soon</div>
 
                       <div id="evapotranspirationHI">
-                        <img id="a" style="width: auto" src="./islands/ET_Hi.png" usemap="#ET">
+                        <img id="a" style="width: auto" src="./islands/HI/ET_Hi.png" usemap="#ET">
 
                         <map name="ET">
                             <area shape="rect" coords="209,22,220,31" alt="a" href="./imagemap.html">

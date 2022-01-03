@@ -228,7 +228,7 @@ echo '
     </tr>
     <tr>
 
-            <td id="datatitle" class="tool" colspan="3">Quarterly Forage Production <span class="tooltext">Position better than average production is expected. <br>Negative less than average production is expected. <br>< -50 funds can be requested.
+            <td id="datatitle" class="tool" colspan="3">Quarterly Forage Production <span class="tooltext">Positive better than average production is expected. <br>Negative less than average production is expected. <br>< -50 funds can be requested.
         </span></td>
 
 
@@ -278,35 +278,6 @@ echo '
     </table>
     </div>
 
-  
-  <style>
-  .tool {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .tool .tooltext {
-    visibility: hidden;
-    width: 300px;
-    text-align: center;
-    border-style: solid;
-    border-width: thin;
-    border-color: black;
-    border-radius: 2px;
-    padding: 5px 0;
-    
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-    top: -5px;
-    right: 105%;
-  }
-
-
-  .tool:hover .tooltext {
-    visibility: visible;
-  }
-  </style>
 
 '
 ?>
