@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <title>Hawai&#x02BB;i Rangeland Informational Portal</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link rel = "stylesheet" type = "text/css" href = "./index.css">
         <link rel = "stylesheet" type = "text/css" href = "./header.css">
@@ -95,10 +96,10 @@
                 document.getElementById("year").innerHTML = year;
             </script>
         <div style="position: relative; top: 0; right: 0;display: flex;margin-left: auto;margin-right: auto;justify-content: center;">
-          <img src="./gauge/gauge.png" style="width: 30%; display: block; ">
+          <img src="./gauge/gauge.png" style="width: 30%; display: block; border: 1px solid black; background-color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
           <div class="gauge-i tool">&#9432;
             <span class="tooltext" >
-              This gauge displays current El Ni&#241;o-Southern Oscillation (ENSO) conditions based on the monthly Oceanic Ni&#241;o Index (ONI) value released by the National Weather Service Climate Prediction Center. This gauge is updated on the 8th of every month. For more info on ENSO and ONI click <a href=”https://www.climate.gov/news-features/understanding-climate/climate-variability-oceanic-ni%C3%B1o-index”> here</a>.
+              This gauge displays current El Ni&#241;o-Southern Oscillation (ENSO) conditions based on the monthly Oceanic Ni&#241;o Index (ONI) value released by the National Weather Service Climate Prediction Center. This gauge is updated on the 8th of every month. For more info on ENSO and ONI click <a target = "_blank" href="https://www.climate.gov/news-features/understanding-climate/climate-variability-oceanic-nino-index"> here</a>.
             </span>
           </div>
         </div>
@@ -111,12 +112,12 @@
           <div class="flex-container" >
 
             <div class="flex-child" id="windy">
-              <iframe id = "windy" width="450" height="250" style="display: block; padding-right: 5%;" src="https://embed.windy.com/embed2.html?lat=20.689&lon=-157.843&detailLat=20.589&detailLon=-159.173&width=450&height=250&zoom=6&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=12&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+              <iframe title="windy.com" id = "windy" width="450" height="250" style="display: block; border-style:none;box-shadow:0px 4px 8px 0px rgba(0,0,0,0.2);" cellspacing="0"  src="https://embed.windy.com/embed2.html?lat=20.689&lon=-157.843&detailLat=20.589&detailLon=-159.173&width=450&height=250&zoom=6&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=12&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
             </div>
   
             <div class="flex-child" style="margin-left: 5%;">
               <a href="http://droughtmonitor.unl.edu/data/jpg/current/current_hi_trd.jpg" target="_blank">
-                <img style="width: 400px; height: auto; border: 2px solid;" src="http://droughtmonitor.unl.edu/data/jpg/current/current_hi_trd.jpg"></a>
+                <img style="width: 400px; height: auto; border: 2px solid; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="http://droughtmonitor.unl.edu/data/jpg/current/current_hi_trd.jpg"></a>
               <p style="text-align: left;"> Source: <a href="https://droughtmonitor.unl.edu/" target="_blank">National Drought Mitigation Center (NDMC)</a></p>
             </div>
   
@@ -171,15 +172,15 @@
                       </div>
 
                       <div id="rainfallHI" style="padding-top: 150px; padding-bottom: 200px;">Coming Soon</div>
-
-                      <div id="evapotranspirationHI">
+                      
+                      <div style="display: block"id= "evapotranspirationHI">
                         <img id="a" style="width: auto" src="./islands/HI/ET_Hi.png" usemap="#ET">
 
                         <map name="ET">
                             <area shape="rect" coords="209,22,220,31" alt="a" href="./imagemap.html">
                             <area shape="rect" coords="184,161,196,172" alt="Palani" href="#">
                         </map><br>
-                        <a href="https://earthengine.google.com/" style="padding-left: 200px">Google Earth Engine</a>
+                        <a href="https://earthengine.google.com/" style="width: 50%; text-align: right;">Source: Google Earth Engine</a>
                       </div>
                 </div>
 
@@ -233,7 +234,7 @@
                     <div id="rainfallKahoolawe" style="padding-top: 150px; padding-bottom: 200px;">Coming Soon</div>
 
                     <div id="evapotranspirationKahoolawe">
-                      <img id="a" src="./islands/ET_Hi.png" usemap="#ET">
+                      <img id="a" src="./islands/kahoolawe.png" usemap="#ET">
 
                       <map name="ET">
                           <area shape="rect" coords="257,34,275,51" alt="a" href="./imagemap.html">
