@@ -14,7 +14,7 @@ body {
   
   .header {
     background-color: #fff;
-    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.2);
     position: fixed;
     width: 100%;
     z-index: 3;
@@ -66,8 +66,9 @@ body {
     display: inline-block;
   
     padding: 28px 20px;
-    position: relative;
+    position: absolute;
     user-select: none;
+    right:0;
   }
   
   .header .menu-icon .navicon {
@@ -92,6 +93,7 @@ body {
   
   .header .menu-icon .navicon:before {
     top: 5px;
+    right: 0;
   }
   
   .header .menu-icon .navicon:after {
@@ -102,6 +104,7 @@ body {
   
   .header .menu-btn {
     display: none;
+
   }
   
   .header .menu-btn:checked ~ .menu {
@@ -128,7 +131,7 @@ body {
   .logos{
       display: inline;
       float: left;
-      margin-left: 10%;
+      margin-left: 1%;
   }
   
   .logos img {
@@ -155,6 +158,9 @@ body {
       padding: 28px 30px;
   
           
+    }
+    .header .logo{
+      font-size: 18px;
     }
     .header .menu {
       clear: none;

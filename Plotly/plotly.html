@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+               <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+               <script src="http://code.jquery.com/jquery-latest.js"></script>
+               <script src="plot.js"></script>
+               <script src="ndvi.js"></script>
+    </head>
+
+    <script>
+        $(document).ready(function(){
+            $("input[name$='bn']").click(function(){
+            var radio_value = $(this).val();
+            /*var isl_value = $('#island-select option:selected')[0].value;*/
+            console.log(radio_value)
+              if(radio_value=='0') {
+              $("#rainfall").show();
+              $("#temp").hide();
+              $("#ET").hide();
+              $("#NDVI").hide();
+            }
+            else if(radio_value=='1') {
+              $("#rainfall").hide();
+              $("#temp").show();
+              $("#ET").hide();
+              $("#NDVI").hide();
+            }
+            else if(radio_value=='2') {
+              $("#rainfall").hide();
+              $("#temp").hide();
+              $("#ET").show();
+              $("#NDVI").hide();
+            }
+            else if(radio_value=='3') {
+              $("#rainfall").hide();
+              $("#temp").hide();
+              $("#ET").hide();
+              $("#NDVI").show();
+              }
+            });
+            $('[name="bn"]:checked').trigger('click');
+          });
+          </script>
+    <body>
+        <div id="radio" >
+            <form style="display: inline; border: none; box-shadow: none">
+                <input type="radio" name="bn" value="0" /> Rainfall
+                <input type="radio" name="bn" value="1" /> Temperature
+                <input type="radio" name="bn" value="2" checked="checked"/> Evapotranspiration
+                <input type="radio" name="bn" value="3"/> NDVI
+            </form>
+        </div>
+
+        <div id="rainfall" class="myDiv">
+            <p> Rainfall</p>
+        </div>
+            
+        <div id="temp" class="myDiv">
+            <p>Temp</p>
+        </div>
+        <div id="ET" class="myDiv">
+            <p>ET</p>
+            <div id="et" style="display: inline-block;"></div>
+        </div>
+        
+        <div id="NDVI" class="myDiv">
+            <p>NDVI</p>
+            <div id="ndvi" style="display: inline-block;"></div>
+        </div>
+        
+
+
+
+    </body>
+    <style>
+        .myDiv{
+            display: none;
+            text-align: center;
+        }
+        #radio{
+            text-align: center;
+            padding-bottom: 1%;
+            padding-top: 1%;
+        }
+    </style>
+</html>

@@ -103,7 +103,7 @@
                     <div class="wrap">
                         <div class="div3">
                             <div class="graph">
-                                <img src="./graphs/RS04_ET.png">
+                                <img src="./graphs/RS04_et.png">
                             </div> 
                         </div>
                     </div>

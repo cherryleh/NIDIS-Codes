@@ -31,7 +31,8 @@ html, body {
     font-weight: bold;
     padding-top: 15px;
     padding-bottom: 15px;
-    border: 2px solid;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
 }
 
 .statewide{
