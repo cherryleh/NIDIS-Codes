@@ -5,6 +5,10 @@ html, body {
     padding: 0;
     font-family: 'Montserrat';
 }
+
+html{
+    scroll-behavior: smooth;
+}
   
 .content {
     min-height: 100%;

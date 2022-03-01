@@ -1,0 +1,43 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <br />
+  <div class="container">
+
+
+        <div class="card" id="card">
+          <div class="card-header" id="card">
+              <a data-toggle="collapse" href="#collapse-example" aria-expanded="true" aria-controls="collapse-example"  id="category">
+                  <i class="fa fa-chevron-down pull-right"></i>
+                  Example open and close
+              </a>
+          </div>
+          <div id="collapse-example" class="collapse show" aria-labelledby="heading-example">
+            <div class="card-block">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda itaque asperiores sapiente aut debitis nulla accusantium odit voluptate minima eos quia animi numquam quo atque, saepe autem tempora, reprehenderit facere?
+            </div>
+          </div>
+        </div>
+
+  </div>
+</body>
+
+<style>
+    .card-header .fa {
+      transition: .3s transform ease-in-out;
+    }
+    .card-header .collapsed .fa {
+      transform: rotate(-180deg);
+    }
+#category{
+  color: black;
+}
+#card{
+  background-color: white;
+  border: none;
+}
+</style>

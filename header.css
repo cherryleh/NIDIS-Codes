@@ -45,12 +45,16 @@ body {
   .header .logo {
     display: block;
     float: left;
-    font-size: 20px;
-    padding: 10px 20px;
+    font-size: 22px;
     text-decoration: none;
     text-align: center;
   }
   
+  .header a{
+    font-size: 17px !important;
+    line-height: normal !important;
+  }
+
   /* menu */
   
   .header .menu {
@@ -132,17 +136,19 @@ body {
       display: inline;
       float: left;
       margin-left: 1%;
+      padding-top: 13px;
+      padding-bottom: 13px;
   }
   
   .logos img {
       width: 50px;
       height: auto;
       vertical-align: middle;
-      padding-top: 5px;
-      padding-bottom: 5px;
   }
   
-  
+  .logo{
+    padding: 17px 0px 17px 10px;
+  }
   
   .logos img:last-child{
       margin-left: 10px;

@@ -1,0 +1,77 @@
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="plotly.js"></script>
+  </head>
+<!--<section>
+    <div class="container">
+        <div class="divA" style="background-color: aliceblue;">
+            <img style="width: 100%; vertical-align: middle;" src="./islands/HI/RS04_et.png">
+        </div>
+        <div class="divB" style="background-color:blue; height: 120% "id="plotly-div">
+          
+        </div>
+        <div class="divC" id="myDiv2">
+          
+        </div>
+      </div>
+</section>
+
+<style>
+ 
+ .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .container>div {
+      flex: 1;
+      min-width: 40%;
+    }
+
+
+    /* set here the width where you want switching layout */
+
+    @media screen and (max-width: 600px) {
+      .container {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        ;
+      }
+      .divA {
+        display: table-cell;
+        width: 50%;
+      }
+    }
+</style>-->
+
+<body>
+    <div class="container">
+        <div class="divA">
+            <img  src="./islands/HI/RS04_et.png">
+        </div>
+        <div class="divB" id="plotly-div">
+        </div>
+    </div>
+    <div id="myDiv2"></div>
+</body>
+
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        justify-content: center;
+
+    }
+
+    .divA{
+      width: 50%
+
+    }
+
+    .divB{
+        width: 50%;
+    }
+</style>
