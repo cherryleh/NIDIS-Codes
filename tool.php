@@ -109,7 +109,7 @@ while (($row = fgetcsv($querytable, 0, ",")) !== FALSE) {
 if ($QFP_Me >= 0){
     $QFP_Me_Res = 'Better than average production expected';
     $QFP_Me_Col = 'black';
-} elseif ($QFP_Me < 0 and $QFP>=50){
+} elseif ($QFP_Me < 0 and $QFP_Me>=-50){
     $QFP_Me_Res = 'Less than average production expected';
     $QFP_Me_Col = 'black';
 } elseif ($QFP_Me < -50){
@@ -243,7 +243,7 @@ echo '
 <tr>
 <td class="left"> Historical Low </td>
 <td id="num">' . $QFP_Mn . '%<span>'.$QFP_Mn_Arrow.';</span> </td>
-<td class="right"> <span style="color:black; display:inline-block;float:left">&#10230;</span> <div style="display:inline;color:'.$QFP_Mn_Col.'">'. $QFP_Mn_Res.'</div></td>
+<td class="right"> <span style="color:black; display:inline-block;float:left;height: 100%">&#10230;</span> <div style="display:inline;color:'.$QFP_Mn_Col.'">'. $QFP_Mn_Res.'</div></td>
 </tr> 
 <tr>
 <td id="datatitle" colspan="3" class="tool">'. $monthtitle . ' Production Ratio <span class="tooltext">>0.5 Site is stable <br> <0.5 site is unstable

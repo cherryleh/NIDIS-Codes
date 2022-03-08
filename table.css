@@ -14,7 +14,7 @@ th{
     font-weight: normal !important;
 }
 table{
-    width: 60%;
+    width: 50%;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -30,6 +30,10 @@ table{
 #datatitle{
     padding-left: 10px;
     cursor: help;
+    text-decoration-style: dotted;
+    text-decoration-line: underline;
+    padding-bottom: 2px;
+    text-underline-offset: 2px;
 }
 
 #num{
@@ -72,3 +76,64 @@ table{
     animation: fadeIn 1s;
 }
 
+
+.tool {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tool .tooltext {
+    visibility: hidden;
+    width: 17vw;
+    background-color: #fff;
+    text-align: center;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    border-radius: 2px;
+    padding: 0.1vw;
+    
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+    text-align: left;
+  }
+
+
+  .tool:hover .tooltext {
+    visibility: visible;
+  }
+
+  .i{
+    position: relative;
+    display: inline;
+    width: 100%;
+  }
+  
+  .i a{
+      font-size: 12px;
+  }
+  .i .tooltext {
+      font-size: 12px;
+    visibility: hidden;
+    width: 30vw;
+    background-color: #fff;
+    text-align: center;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    border-radius: 2px;
+    padding: 0.1vw;
+    position: absolute;
+    z-index: 2;
+    top: 10%;
+    left: 15%;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+
+  .i:hover .tooltext {
+    visibility: visible;
+  }

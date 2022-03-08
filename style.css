@@ -199,6 +199,7 @@ a.article:hover {
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
+    border: black solid 1px;
   }
   
   #rainHist #droughtHist #rainTrend p{
@@ -283,3 +284,40 @@ a.article:hover {
     border: black solid 1px;
     padding: 1%;
 }
+
+/* Header */
+.logos{
+    display: inline;
+    float: left;
+    margin-left: 1%;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.logos img {
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.logo {
+    display: block;
+    float: left;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
+    padding: 17px 0px 17px 10px;
+  }
+
+/* Rainfall Forecast */
+#rainProj img{
+    width: 60%;
+    background-color: white;
+}
+
+#rainProj{
+    text-align: center;
+    padding-top: 2%;
+}
+
+  

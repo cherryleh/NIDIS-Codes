@@ -77,20 +77,24 @@
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button>
-
+                    <div class="logos">
+                        <img src="./logos/NOAA.png">
+                        <img src="./logos/NIDIS.jpeg">
+                    </div>
+                    <div href="" class="logo" style="display: inline;"> <a href="index.html" style="text-decoration: none;"> Hawai&#x02BB;i Rangeland <br> Information Portal (Beta)</a></div>
                     <div class="collapse navbar-collapse" >
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Page</a>
+                                <a class="nav-link" href="#">Select Ranch</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
+                                <a class="nav-link" href="#">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
+                                <a class="nav-link" href="#">Links</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
+                                <a class="nav-link" href="#">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -126,6 +130,15 @@
 
                 </div>
                 
+            </div>
+
+            <div id="rainForecast">
+                <p class="subtitle">Rainfall Forecast</p>
+                <img src="./gauge/gauge.png" style="width: 30%; display: block; margin-left: auto;margin-right: auto;">
+                <div id="rainProj" class="sec3heading">
+                    <p style="font-size: 20px">3-Month Rainfall Projections</p>
+                    <img src="./graphs/RS04_rainfall.png">
+                </div>
             </div>
 
             <div id="tool">
@@ -197,17 +210,15 @@
             </div>
             
             <div id="data">
-                <div class="name"> 
-                    <h5>Historical Data</h5>
-                </div>
+                <p class="subtitle">Historical Data</p>
                 <div class="wrapper">
                   <div id="rainHist" class="box">
-                      <p>Average Rainfall and Temperature</p>
+                      <p style="text-align: center">Average Rainfall and Temperature</p>
                     <img src=" ./RanchPointsRF/RS04_BI/RS04_BI_Climograph.png">
                   </div>
                   <span></span>
                   <div id="droughtHist" class="box">
-                    <p> 100-year Drought History</p>
+                    <p style="text-align: center"> 100-year Drought History</p>
                     <img src="./RanchPointsRF/RS04_BI/RS04_BIDrought_History.png">
                   </div>
                 </div>
