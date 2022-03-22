@@ -14,19 +14,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $drymatter = ($_POST["drymatter"]);
   }
     
-  if (empty($_POST["animalunits"])) {
-    $animalunitsErr = "<br> Field is required";
-    define("animalunitsErr",$animalunitsErr, true);
-  } else {
+ // if (empty($_POST["animalunits"])) {
+  // $animalunitsErr = "<br> Field is required";
+  //  define("animalunitsErr",$animalunitsErr, true);
+ // } 
+   // else {
     $animalunits = ($_POST["animalunits"]);
+ // }
 
-  }
+  
 
-  if (empty($_POST["acres"])) {
-    $acresErr = "<br> Field is required";
-  } else {
+ // if (empty($_POST["acres"])) {
+ //   $acresErr = "<br> Field is required";
+ // } else {
     $acres = ($_POST["acres"]);
-  }
+ // }
 
 }
 

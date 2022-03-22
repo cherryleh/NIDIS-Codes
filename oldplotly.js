@@ -49,7 +49,7 @@ var selectorOptions = {
                 row = allRows[i];
                 
                 x.push(row[xFieldName]);
-                y.push(row[yFieldName]);
+                y.push(row[yFieldName]);w
                 
             }
 
@@ -117,7 +117,7 @@ var selectorOptions = {
 
             };
 
-            var config = {responsive: true};oi
+            var config = {responsive: true};
 
                     
             Plotly.plot('ET-div', data, layout,config);

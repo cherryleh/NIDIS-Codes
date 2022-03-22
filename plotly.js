@@ -44,8 +44,8 @@ var selectorOptions = {
           Plotly.d3.csv(url2, function(data){ processData(data, 'trace2', 'Month', 'ET', 'myDiv1','multi') } );
           Plotly.d3.csv(url3, function(data){ processData(data, 'trace3', 'newMonth', 'NDVI','myDiv2','multi') } );
           Plotly.d3.csv(url4, function(data){ processData(data, 'trace4', 'Month', 'NDVI', 'myDiv2','multi') } );
-          Plotly.d3.csv(url5, function(data){ processData(data, 'trace3', 'datetime', 'ET', 'ET-hist','single') } );
-          Plotly.d3.csv(url6, function(data){ processData(data, 'trace4', 'datetime', 'NDVI', 'NDVI-hist','single') } );
+          Plotly.d3.csv(url5, function(data){ processData(data, 'trace5', 'datetime', 'ET', 'ET-hist','single') } );
+          Plotly.d3.csv(url6, function(data){ processData(data, 'trace6', 'datetime', 'NDVI', 'NDVI-hist','single') } );
         };
 
         function processData(allRows, traceName, xFieldName, yFieldName, divName, mode) {
@@ -59,19 +59,22 @@ var selectorOptions = {
                 y.push(row[yFieldName]);
                 
             }
-
+            console.log(mode == 'multi', yFieldName == 'NDVI')
             if(mode == 'single'){
                 makeSinglePlot( x, y,  traceName, divName)
+               
             } else if (mode=='multi' && yFieldName =='NDVI'){
               traces_NDVI[traceName].x = x;
               traces_NDVI[traceName].y = y;
-
               makeNDVIPlotly(traces_NDVI[traceName]);
+
+
             } else{
               traces_ET[traceName].x = x;
               traces_ET[traceName].y = y;
 
-              makePlotly(traces_ET[traceName]);
+              makeETPlotly(traces_ET[traceName]);
+              
             }
 
 
@@ -104,7 +107,7 @@ var selectorOptions = {
               },
                 yaxis: {
                   fixedrange: true,
-                  side: 'right'
+                  side: 'left'
                 },
                 showlegend: false,
                 
@@ -114,7 +117,32 @@ var selectorOptions = {
             Plotly.newPlot(divName,traces,layout, config);
           };
 
-        function makePlotly(trace) {
+          function makeNDVIPlotly(trace) {
+            var data = [trace];
+          
+            console.log(trace);
+            var layout = {
+              yaxis:{
+                
+                autorange:true
+              },
+              margin: {
+                l: 50,
+                r: -50,
+                b: 50,
+                t: 30,
+                pad: 4
+              },
+
+            };
+
+            var config = {responsive: true};
+
+                  
+            Plotly.plot('NDVI-div', data, layout,config);
+        }
+
+        function makeETPlotly(trace) {
             var data = [trace];
             
             console.log(trace);
@@ -136,27 +164,7 @@ var selectorOptions = {
             Plotly.plot('ET-div', data, layout,config);
         }
 
-        function makeNDVIPlotly(trace) {
-          var data = [trace];
-          
-          console.log(trace);
-          var layout = {
 
-            margin: {
-              l: 50,
-              r: -50,
-              b: 50,
-              t: 30,
-              pad: 4
-            },
-
-          };
-
-          var config = {responsive: true};
-
-                  
-          Plotly.plot('NDVI-div', data, layout,config);
-      }
         
         var traces_ET = {
             trace1: {
@@ -196,7 +204,7 @@ var selectorOptions = {
         }
 
         var traces_NDVI = {
-          trace1: {
+          trace3: {
            meta: {columnNames: {
                x: 'Month', 
                y: 'NDVI'
@@ -215,7 +223,7 @@ var selectorOptions = {
             }
           }
           },
-          trace2: {
+          trace4: {
           meta: {columnNames: {
               x: 'Month', 
               y: 'NDVI'
