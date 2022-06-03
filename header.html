@@ -1,39 +1,44 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel = "stylesheet" type = "text/css" href = "./header.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="header.css">
 
 </head>
-<body>
-    <header class="header">
-        <div class="logos">
-            <img src="./logos/NOAA.png">
-            <img src="./logos/NIDIS.jpeg">
-        </div>
-        <div href="" class="logo" style="display: inline;"> <a href="index.html" style="text-decoration: none;"> Hawai&#x02BB;i Rangeland <br> Information Portal (Beta)</a></div>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-            <ul class="menu">
-                <li><a href="index.html#ranch">Select Ranch</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#links">Links</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
 
-          </header>
-<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
+<body>
+  <header class="header">
+    <div class="leftContent">
+      <div class="logos">
+        <img src="./logos/NOAA.png">
+        <img src="./logos/NIDIS.jpeg">
+      </div>
+      <div href="" class="logo" style="display: inline;"> <a href="index.html" style="text-decoration: none;">
+          Hawai&#x02BB;i Rangeland <br> Information Portal (Beta)</a></div>
+    </div>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li><a href="localhost/index.html#ranch">Select Ranch</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#links">Links</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </header>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
 
 </body>
+
 </html>

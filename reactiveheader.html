@@ -1,0 +1,264 @@
+<html>
+
+<head>
+    <title>RS04</title>
+
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <link rel="stylesheet" type="text/css" href="table.css">
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- Font Awesome JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
+        </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
+        </script>
+
+
+</head>
+
+<body>
+    <header class="header">
+        <a href="" class="logo">CSS Nav</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </header>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div style="position:sticky;top:0">
+                <div class="sidebar-header">
+                    <h3>Menu</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="wwn-toggle">Average
+                            Climate Conditions</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="#">Rainfall</a>
+                            </li>
+                            <li>
+                                <a href="#">Temperature</a>
+                            </li>
+                            <li>
+                                <a href="#evaotranspiration">Evapotranspiration</a>
+                            </li>
+                            <li>
+                                <a href="#NDVI">NDVI</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#rainForecast">Rainfall Forecast</a>
+                    </li>
+                    <li>
+                        <a href="#tool">Animal Management and Decision Support Tool</a>
+                    </li>
+                    <li>
+                        <a href="#data">Historical Data</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
+        </script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+        </script>
+
+
+
+</body>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Helvetica, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    a {
+        color: #000;
+    }
+
+    /* header */
+
+    .header {
+        background-color: #fff;
+        box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+        position: fixed;
+        width: 100%;
+        z-index: 3;
+    }
+
+    .header ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        background-color: #fff;
+    }
+
+    .header li a {
+        display: block;
+        padding: 20px 20px;
+        border-right: 1px solid #f4f4f4;
+        text-decoration: none;
+    }
+
+    .header li a:hover,
+    .header .menu-btn:hover {
+        background-color: #f4f4f4;
+    }
+
+    .header .logo {
+        display: block;
+        float: left;
+        font-size: 2em;
+        padding: 10px 20px;
+        text-decoration: none;
+    }
+
+    /* menu */
+
+    .header .menu {
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+    }
+
+    /* menu icon */
+
+    .header .menu-icon {
+        cursor: pointer;
+
+        float: right;
+        padding: 28px 20px;
+        position: relative;
+        user-select: none;
+    }
+
+    .header .menu-icon .navicon {
+        background: #333;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 18px;
+    }
+
+    .header .menu-icon .navicon:before,
+    .header .menu-icon .navicon:after {
+        background: #333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+    }
+
+    .header .menu-icon .navicon:before {
+        top: 5px;
+    }
+
+    .header .menu-icon .navicon:after {
+        top: -5px;
+    }
+
+    /* menu btn */
+
+    .header .menu-btn {
+        display: none;
+    }
+
+    .header .menu-btn:checked~.menu {
+        max-height: 240px;
+    }
+
+    .header .menu-btn:checked~.menu-icon .navicon {
+        background: transparent;
+    }
+
+    .header .menu-btn:checked~.menu-icon .navicon:before {
+        transform: rotate(-45deg);
+    }
+
+    .header .menu-btn:checked~.menu-icon .navicon:after {
+        transform: rotate(45deg);
+    }
+
+    .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+    .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+        top: 0;
+    }
+
+    /* 48em = 768px */
+
+    @media (min-width: 48em) {
+        .header li {
+            float: left;
+        }
+
+        .header li a {
+            padding: 20px 30px;
+        }
+
+        .header .menu {
+            clear: none;
+            float: right;
+            max-height: none;
+        }
+
+        .header .menu-icon {
+            display: none;
+        }
+    }
+
+    .logos{
+        display: inline;
+        float: left;
+        margin-left: 1%;
+        padding-top: 13px;
+        padding-bottom: 13px;
+    }
+
+    .logos img {
+        width: 50px;
+        height: auto;
+        vertical-align: middle;
+    }
+</style>
+
+</html>

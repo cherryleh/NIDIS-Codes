@@ -1,23 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<head>
+    <link rel="stylesheet" type="text/css" href="header1.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+<body>
     <div class="container-fluid">
 
-        <button type="button" id="sidebarCollapse" class="btn btn-info">
-            <i class="fas fa-align-left"></i>
-            <span>Menu</span>
-        </button>
+        <!--<button type="button" id="sidebarCollapse" class="btn btn-info" style="display:none">
+        <i class="fas fa-align-left"></i>
+        <span>Menu</span>
+    </button>-->
+        <div class="headerLeft">
+            <div class="logos" style="display:inline-block">
+                <img src="./logos/NOAA.png">
+                <img src="./logos/NIDIS.jpeg">
+            </div>
+            <div class="name" style="display:inline-block"> <a href="index.html" style="text-decoration: none;">
+                    Hawai&#x02BB;i
+                    Rangeland <br> Information Portal
+                    (Beta)</a>
+            </div>
+        </div>
         <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <i class="fas fa-align-justify"></i>
         </button>
-        <div class="logos">
-            <img src="./logos/NOAA.png">
-            <img src="./logos/NIDIS.jpeg">
-        </div>
-        <div href="" class="logo" style="display: inline;"> <a href="index.html"
-                style="text-decoration: none;"> Hawai&#x02BB;i Rangeland <br> Information Portal (Beta)</a>
-        </div>
-        <div class="collapse navbar-collapse">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Select Ranch</a>
@@ -34,5 +44,4 @@
             </ul>
         </div>
     </div>
-</nav>
-
+</body>

@@ -6,8 +6,13 @@ body {
     top: 0;
   }
   
-  a {
+  .menu a {
     color: #000;
+  }
+
+  .header a:visited{
+    text-decoration: none; 
+    color:black;
   }
   
   /* header */
@@ -18,7 +23,7 @@ body {
     position: fixed;
     width: 100%;
     z-index: 3;
-    top: 0;
+    top:0;
   }
   
   .header ul {
@@ -155,7 +160,7 @@ body {
   }
   /* 48em = 768px */
   
-  @media (min-width: 48em) {
+  @media (min-width: 60em) {
     .header li {
       float: left;
   
@@ -179,4 +184,10 @@ body {
     .header .menu-icon {
       display: none;
     }
+    .leftContent{
+      text-align: center;
+      
+    }
+
+
   }

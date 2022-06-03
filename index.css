@@ -167,3 +167,47 @@ html{
       color: initial;
       border: 1px solid black;
   }
+
+  #oni{
+    position: relative; 
+    top: 0; 
+    right: 0;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  #oni img{
+    width: 30%; 
+    display: block; 
+    border: 1px solid black; 
+    background-color: white; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  @media (max-width: 768px) {
+      .flex-container{
+          display: block;
+      }
+
+      #windy{
+          margin-left: auto;
+          margin-right: auto;
+          width: 70%;
+      }
+
+      #droughtMonitor.flex-child{
+        text-align: center;
+        margin-top: 3%;
+        margin-left: 0 !important;
+    }
+
+    #droughtMonitor.flex-child p{
+        text-align: center !important;
+        padding-right: 1%;
+    }
+    #oni img{
+        width: 70% !important;
+    }
+  }

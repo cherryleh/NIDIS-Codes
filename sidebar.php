@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet" type="text/css" href="form.css">
     <link rel="stylesheet" type="text/css" href="table.css">
+    <link rel="stylesheet" href="style.css">
 
 
     <!-- Font Awesome JS -->
@@ -27,89 +28,80 @@
     </script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="plotly.js"></script>
+
+    <script>
+        $(function(){
+        $("#header").load("./header.html");
+        $("#footer").load("./footer.html");
+        });
+            
+    </script>
 </head>
 
 <body>
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Menu</h3>
+            <div style="position:sticky;top:0">
+                <div class="sidebar-header">
+                    <h3>Menu</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="wwn-toggle">Average
+                            Climate Conditions</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="#">Rainfall</a>
+                            </li>
+                            <li>
+                                <a href="#">Temperature</a>
+                            </li>
+                            <li>
+                                <a href="#evaotranspiration">Evapotranspiration</a>
+                            </li>
+                            <li>
+                                <a href="#NDVI">NDVI</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#rainForecast">Rainfall Forecast</a>
+                    </li>
+                    <li>
+                        <a href="#tool">Animal Management and Decision Support Tool</a>
+                    </li>
+                    <li>
+                        <a href="#data">Historical Data</a>
+                    </li>
+                </ul>
             </div>
-
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="wwn-toggle">Average
-                        Climate Conditions</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Rainfall</a>
-                        </li>
-                        <li>
-                            <a href="#">Temperature</a>
-                        </li>
-                        <li>
-                            <a href="#evaotranspiration">Evapotranspiration</a>
-                        </li>
-                        <li>
-                            <a href="#NDVI">NDVI</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#rainForecast">Rainfall Forecast</a>
-                </li>
-                <li>
-                    <a href="#tool">Animal Management and Decision Support Tool</a>
-                </li>
-                <li>
-                    <a href="#data">Historical Data</a>
-                </li>
-            </ul>
-
         </nav>
 
         <!-- Page Content  -->
         <div id="content">
+        <div id="header" class="header" style="width:80%;" >Header</div>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Menu</span>
-                    </button>
-                    <div class="logos">
-                        <img src="./logos/NOAA.png">
-                        <img src="./logos/NIDIS.jpeg">
-                    </div>
-                    <div href="" class="logo" style="display: inline;"> <a href="index.html"
-                            style="text-decoration: none;"> Hawai&#x02BB;i Rangeland <br> Information Portal (Beta)</a>
-                    </div>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-                    
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Select Ranch</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Links</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
             <div height=auto>
                 <h4 style="text-align: center; padding:0">RS04</h4>
+
+                <div id="submenu">
+                    <a href="#">Rainfall</a>
+                    <a href="#">Temperature</a>
+
+                    <a href="#evaotranspiration">Evapotranspiration</a>
+
+                    <a href="#NDVI">NDVI</a>
+
+                    <a href="#rainForecast">Rainfall Forecast</a>
+
+                    <a href="#tool">Animal Management and Decision Support Tool</a>
+
+                    <a href="#data">Historical Data</a>
+                </div>
+
                 <div class="climateConditions">
                     <div id="evapotranspiration">
                         <div class="name">
@@ -152,7 +144,11 @@
                         <div class="name">
                             <p class="subtitle">NDVI (Normalized Difference Vegetation Index)</p>
                             <div class="definition">
-                                <p> Normalized Difference Vegetation Index (NDVI) is a widely used vegetation index that measures the density of green in a region and is often used to monitor drought, forecast agricultural production, and more. Values range from +1.0 to -1.0. High NDVI values (approximately 0.6 to 0.9) suggest dense vegetation such as crops at their peak growth. 
+                                <p> Normalized Difference Vegetation Index (NDVI) is a widely used vegetation index that
+                                    measures the density of green in a region and is often used to monitor drought,
+                                    forecast agricultural production, and more. Values range from +1.0 to -1.0. High
+                                    NDVI values (approximately 0.6 to 0.9) suggest dense vegetation such as crops at
+                                    their peak growth.
                                 </p>
                             </div>
                         </div>
@@ -182,7 +178,7 @@
 
                 <div id="rainForecast">
                     <p class="subtitle">Rainfall Forecast</p>
-                    <img src="./gauge/gauge.png"
+                    <img id="gauge" src="./gauge/gauge.png"
                         style="width: 30%; display: block; margin-left: auto;margin-right: auto;">
                     <div id="rainProj" class="sec3heading">
                         <p style="font-size: 20px">3-Month Rainfall Projections</p>
@@ -291,13 +287,13 @@
 
                 <div id="data">
                     <p class="subtitle">Historical Data</p>
-                    <div class="wrapper">
-                        <div id="rainHist" class="box">
+                    <div class="wrapperHist">
+                        <div id="rainHist" class="graphHist box">
                             <p style="text-align: center">Average Rainfall and Temperature</p>
                             <img src=" ./RanchPointsRF/RS04_BI/RS04_BI_Climograph.png">
                         </div>
                         <span></span>
-                        <div id="droughtHist" class="box">
+                        <div id="droughtHist" class="graphHist box">
                             <p style="text-align: center"> 100-year Drought History</p>
                             <img src="./RanchPointsRF/RS04_BI/RS04_BIDrought_History.png">
                         </div>
@@ -312,6 +308,14 @@
 
 
             </div>
+            <button
+                    type="button"
+                    class="btn btn-info btn-floating btn-lg"
+                    id="btn-back-to-top"
+                    >
+              <i class="fas fa-arrow-up"></i>
+            </button>
+
         </div>
 
 
@@ -324,7 +328,35 @@
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
         </script>
 
-        <script type="text/javascript">
+
+        <script>
+            //Get the button
+            let mybutton = document.getElementById("btn-back-to-top");
+
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function () {
+              scrollFunction();
+            };
+
+            function scrollFunction() {
+              if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+              ) {
+                mybutton.style.display = "block";
+              } else {
+                mybutton.style.display = "none";
+              }
+            }
+            // When the user clicks on the button, scroll to the top of the document
+            mybutton.addEventListener("click", backToTop);
+
+            function backToTop() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+        </script>
+        <!--<script type="text/javascript">
         //if not mobile
         $(document).ready(function() {
             $('#sidebarCollapse').on('click', function() {
@@ -355,7 +387,7 @@
                 console.log(screen.width)
             });
         });
-        </script>
+        </script>-->
 </body>
 
 </html>

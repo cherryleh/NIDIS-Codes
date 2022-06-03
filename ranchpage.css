@@ -1,219 +1,211 @@
-
+body,
 html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    margin: 0 0 100px;
-    /* bottom = footer height */
-    padding: 25px;
+    height: 100%;
+    margin: 0;
     font-family: 'Montserrat';
 }
 
-*{
-    color: black;
-    font-size: 16px;
+a, a:link, a:visited, a:focus, a:hover, a:active{
+    color:black;
+    text-decoration:none; 
+
+  }
+
+/* sidebar */
+aside {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 80px;
+    width: 15%;
+    background-color: #fcfcfc;
 }
 
-#radio{
+
+#sidebar ul {
+    list-style: none;
+}
+
+.anchor{
+    display: block;
+    position: relative;
+    top: -76px; 
+    visibility: hidden;
+}
+
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    float: right;
+}
+
+.nav-link{
+    padding-left: 8%  !important;
+}
+
+/* main body*/
+.content {
+    margin-left: 15%;
+    min-height: 100%;
+    position: relative;
     text-align: center;
-    padding-bottom: 1%;
-    padding-top: 1%;
+    margin-top: 78px;  
+
+}
+.subcontent{
+    width:95%;
+    display: block; 
+    margin-right: auto; 
+    margin-left: auto;
 }
 
-#ranchsquare{
-    text-align: center; 
-    padding-top: 1%;
-    padding-bottom: 10px;
-}
+/*Average Climate Conditions*/
 
 .name{
-
-}
-.name p{
     text-align: center;
-    color: black;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.subtitle{
+    font-size: 20px;
+    text-align: center;
+    padding-top: 1%;
+}
+
+.definition{
     font-size: 16px;
-    display: inline-block;
-}
-
-.accordion{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 3%;
-}
-.myDiv{
-    display: none;
-    text-align: center;
-}
-
-
-.wrap{
-    float:left;
-    width:48%;
-    height: 45%;
-    display: flex;
-    align-items: center;
-}
-
-.div1 {
-
-    width:70%;
-    text-align: right;   
-    margin-left: 2%; 
-    margin-right: auto;
-    vertical-align: middle;
-}
-
-.div1 img{
-    width: 120%;
-    display: block;
-    margin-right: 5%;
-
-}
-
-
-/*.div1 p{
-    width: 60%;
-    height: 30%;
-    box-sizing: border-box;
-    border: 1px solid black;
-    margin-left: 30%;
-    margin-right: auto;
-    background-color: #fef2c8;
-    font-size: 0.8vw;
-    text-align: left;
-}*/
-
-.div3 {
-
-    width:80%;
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-
-}
-
-.div3 img{
-    width: 150%;
-    display: block;
-    margin-left: -50%;
-    padding-top: 5%;
-}
-
-.history{
-    display: inline-block;
-
-}
-
-.history p{
-    padding-top: 3%;
-}
-
-.history img{
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-.error{
-    color: red;
-}
-
-.sec3heading{
-    text-align: center;
-
-}
-
-.sec3heading h5{
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-}
-.sec3heading span{
-    background-color: #ffc600;
-    padding: 5px;
-    cursor: help;
-}
-
-#rainproj h5{
-    margin-bottom: 0 !important;
-}
-#rainproj img{
     width: 80%;
-}
-#rainHist img{
-    width: 40%;
-}
-
-#rainTrend img{
-    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#droughtHist img{
-    width: 40%;
+.definition p{
+    text-align: justify;
 }
 
-.tool {
-    position: relative;
-    display: inline-block;
+.definition a{
+    color: blue;
+    text-decoration: underline;
+}
+
+.graph12m{
+    margin-bottom: 2%;
+    border: black solid 1px;
+    background-color: white;
+    width: 60%;
+    padding: 1%;
+}
+
+.graphTitle{
+    text-align: center;
+}
+
+
+.charts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.map{
+  width: 40%
+}
+.histPlotly{
+    background-color: white;
+    width: 100%;
+    border: black solid 1px;
+    padding: 1%;
+}
+
+/* Rainfall Forecast */
+
+#rainProj img{
+    width: 60%;
+    background-color: white;
+}
+
+#rainProj{
+    text-align: center;
+    padding-top: 2%;
+}
+
+/*Historical Data*/
+.box{
+    background-color: white;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: black solid 1px;
   }
   
-  .tool .tooltext {
-    visibility: hidden;
-    width: 17vw;
-    background-color: #fff;
+  #rainHist #droughtHist #rainTrend p{
     text-align: center;
-    border-style: solid;
-    border-width: thin;
-    border-color: black;
-    border-radius: 2px;
-    padding: 0.1vw;
-    
-    position: absolute;
-    z-index: 1;
-    top: -5px;
-    right: 105%;
-    text-align: left;
   }
-
-
-  .tool:hover .tooltext {
-    visibility: visible;
-  }
-
-  .i{
-    position: relative;
-    display: inline;
+  
+  #rainHist img{
     width: 100%;
   }
   
-  .i a{
-      font-size: 12px;
-  }
-  .i .tooltext {
-      font-size: 12px;
-    visibility: hidden;
+  #rainHist{
     width: 30vw;
-    background-color: #fff;
-    text-align: center;
-    border-style: solid;
-    border-width: thin;
-    border-color: black;
-    border-radius: 2px;
-    padding: 0.1vw;
-    position: absolute;
-    z-index: 2;
-    top: 10%;
-    left: 15%;
-    text-align: justify;
-    text-justify: inter-word;
+  }
+  
+  #droughtHist{
+    width: 40vw;
+  }
+  
+  #droughtHist img{
+    width: 100%;
+  }
+  
+  #rainTrend{
+    margin-top: 40px;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #rainTrend img{
+    width: 100%;
+    
+  }
+  
+  .wrapperHist{
+    display: flex;
+    justify-content: center;
   }
 
-
-  .i:hover .tooltext {
-    visibility: visible;
+  .dataTitles p {
+      font-size: 1vw;
   }
+
+/* 48em = 768px */
+
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    #sidebar.active {
+        margin-left: 150px;
+    }
+
+    #sidebarCollapse span {
+        display: none;
+    }
+
+    #submenu {
+        display: inline;
+    }
+
+    .wrapperHist {
+        display: block;
+    }
+
+    .container {
+        margin-left: 0px;
+    }
+}
