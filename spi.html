@@ -1,0 +1,150 @@
+<html>
+
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <div id="SPI-div"></div>
+    <script>
+        var url10 = './ranches/RS04/RS04_spiPOS.csv';
+        var url11 = './ranches/RS04/RS04_spiNEG.csv';
+
+
+        var selectorOptions = {
+            buttons: [{
+                step: 'month',
+                stepmode: 'backward',
+                count: 1,
+                label: '1m'
+            }, {
+                step: 'month',
+                stepmode: 'backward',
+                count: 6,
+                label: '6m'
+            }, {
+                step: 'year',
+                stepmode: 'todate',
+                count: 1,
+                label: 'YTD'
+            }, {
+                step: 'year',
+                stepmode: 'backward',
+                count: 1,
+                label: '1y'
+            }, {
+                step: 'all',
+            }],
+        };
+
+
+
+        //Multi = stacked bar+line graph, Single = historical, one-line time series
+        function makeplot() {
+            Plotly.d3.csv(url10, function (data) { processData(data, 'trace10', 'date', 'RF_in_scale_3_calculated_index', 'SPI-div') });
+            Plotly.d3.csv(url11, function (data) { processData(data, 'trace11', 'date', 'RF_in_scale_3_calculated_index', 'SPI-div') });
+        };
+        //Process CSV
+        function processData(allRows, traceName, xFieldName, yFieldName, divName, mode) {
+            let x = [];
+            let y = [];
+
+            for (var i = 0; i < allRows.length; i++) {
+                row = allRows[i];
+
+                x.push(row[xFieldName]);
+                y.push(row[yFieldName]);
+
+            }
+
+            traces_SPI[traceName].x = x;
+            traces_SPI[traceName].y = y;
+
+            makeSPIPlotly(traces_SPI[traceName], divName);
+
+
+
+        }
+
+        function makeSPIPlotly(trace, divName) {
+            var data = [trace];
+
+            console.log(trace);
+            var layout = {
+                xaxis: {
+                    rangeselector: selectorOptions,
+                    rangeslider: {}
+                  },
+                  yaxis: {
+                    fixedrange: true,
+                    side: 'right'
+                  },
+                margin: {
+                    l: 50,
+                    r: -50,
+                    b: 50,
+                    t: 30,
+                    pad: 4
+                },
+
+            };
+
+            var config = { responsive: true };
+
+            Plotly.plot(divName, data, layout, config);
+        }
+        
+        
+        var traces_SPI = {
+            trace10: {
+                meta: {
+                    columnNames: {
+                        x: 'Month',
+                        y: 'SPI'
+                    }
+                },
+                // mode: 'markers', 
+                type: 'scatter',
+                fill: 'tozeroy',
+                fillcolor:'lightblue',
+                hoverinfo: 'y',
+                name: 'Positive',
+                hovertemplate: '%{y:.2f}',
+                marker: {
+                    color: 'rgb(158,202,225)',
+                    opacity: 0.6,
+                    line: {
+                        color: 'red',
+                        width: 1.5
+                    }
+                }
+            },
+            trace11: {
+                meta: {
+                    columnNames: {
+                        x: 'Month',
+                        y: 'SPI'
+                    }
+                },
+                type: 'scatter',
+                fill: 'tozeroy',
+                fillcolor:'lightred',
+                name: 'Negative',
+                hovertemplate: '%{y:.2f}',
+                hoverinfo: 'y',
+                marker: {
+                    color: '',
+
+                }
+            },
+
+        }
+
+
+        makeplot();
+
+
+    </script>
+</body>
+
+</html>

@@ -2,7 +2,8 @@ body,
 html {
     height: 100%;
     margin: 0;
-    font-family: 'Montserrat';
+    font-family: 'Lato';
+    background-color: #f8f9f9;
 }
 
 a, a:link, a:visited, a:focus, a:hover, a:active{
@@ -18,7 +19,8 @@ aside {
     position: fixed;
     top: 80px;
     width: 15%;
-    background-color: #fcfcfc;
+    background-color: #fff;
+    border-right: 1px solid #e9e9e9;
 }
 
 
@@ -35,6 +37,8 @@ aside {
 
 .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
     float: right;
+    padding-left: 2px;
+    line-height: 24px !important;
 }
 
 .nav-link{
@@ -208,4 +212,10 @@ aside {
     .container {
         margin-left: 0px;
     }
+
+    .content{
+        margin-left: 0;
+    }
+
+
 }

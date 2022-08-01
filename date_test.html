@@ -1,0 +1,89 @@
+<!--<h3 id="subcategory">Statewide Conditions - <p style="display:inline" id="month"></p>, <p style="display:inline; width: 100%" id="year"></p></h3>
+
+
+
+<p>Last updated <span id="updateMonth"></span> 8, <span id="year"></span></p>
+
+
+<script>
+
+
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const d = new Date();
+    let month = months[d.getMonth()];
+    document.getElementById("month").innerHTML = month;
+
+    let year = d.getFullYear();
+    document.getElementById("year").innerHTML = year;
+
+
+
+    date = d.getDate();
+
+    if (date < 8) {
+      updateMonth = months[d.getMonth()-1];
+      
+    } else {
+      updateMonth = months[d.getMonth()];
+      
+    }
+    console.log(updateMonth);
+    document.getElementById("updateMonth").innerHTML = updateMonth;
+</script>
+<p style="display:inline; width: 100%" class="year"></p>
+
+<p>Last updated <span id="updateMonth"></span> 8, <span class="year"></span></p>
+
+
+<script>
+
+    const d = new Date();
+
+    let year = d.getFullYear();
+    console.log(document.getElementsByClassName("year"));
+    let html = document.getElementsByClassName("year");
+    for (i = 0;i < html.length; i++) {
+        html[i].innerHTML = year;
+
+    }
+
+
+
+</script>
+-->
+
+<p style="display:inline; width: 100%" class="year"></p>
+<p class="month"></p>
+<p>Last updated <span class="month"></span> 8, <span class="year"></span></p>
+
+<script>
+    const d = new Date();
+    const month = new Array();
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+
+    let year = d.getFullYear();
+    let classYear = document.getElementsByClassName("year");
+
+    let name = month[d.getMonth()];
+    let classMonth = document.getElementsByClassName("month"); 
+
+    for (i = 0; i < classYear.length; i++) {
+        classYear[i].innerHTML = year;
+    }
+
+    for (i = 0; i < classMonth.length; i++) {
+        classMonth[i].innerHTML = name;
+    }
+
+</script>

@@ -91,7 +91,7 @@ if ($oni > 1.1) {
 }
 
 //Read rainfall query table
-$ranch = "RS04";
+$ranch = $_GET["ranch"];
 $ranchurl = "./RanchPointsRF/". $ranch  . "_BI/" . $ranch . "_BI_RF_Query_Table.csv";
 
 $querytable = fopen($ranchurl, "r");
